@@ -1,0 +1,5366 @@
+{
+  "dataset": "billing_service",
+  "index": {
+    "files": 12,
+    "chunks": 65,
+    "graph_edges": {
+      "CALLS": 51,
+      "IMPORTS": 17
+    },
+    "call_names": 140,
+    "resolved_calls": 51,
+    "resolution_rate": 0.36428571428571427,
+    "build_ms": {
+      "bm25_index_ms": 4.493799991905689,
+      "embedding_index_ms": 35352.298100013286,
+      "graph_build_ms": 4.917999962344766
+    },
+    "embedding_model": "jinaai/jina-embeddings-v2-base-code",
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "device": "cpu",
+    "generated_at": "2026-10-25 22:04 UTC"
+  },
+  "metrics": {
+    "BM25": {
+      "MRR@5": 0.7891891891891891,
+      "NDCG@5": 0.6700066277388336,
+      "Recall@5": 0.7153153153153152,
+      "P@5": 0.28648648648648645,
+      "MAP@5": 0.6121621621621621,
+      "Hit@1": 0.6756756756756757,
+      "Recall@10": 0.822072072072072
+    },
+    "Dense": {
+      "MRR@5": 0.8454954954954954,
+      "NDCG@5": 0.7659899592036299,
+      "Recall@5": 0.790990990990991,
+      "P@5": 0.32972972972972975,
+      "MAP@5": 0.6980855855855856,
+      "Hit@1": 0.7837837837837838,
+      "Recall@10": 0.9085585585585586
+    },
+    "Dense + BM25": {
+      "MRR@5": 0.8644144144144144,
+      "NDCG@5": 0.7480411295581948,
+      "Recall@5": 0.7896396396396397,
+      "P@5": 0.32972972972972964,
+      "MAP@5": 0.6943993993993994,
+      "Hit@1": 0.8108108108108109,
+      "Recall@10": 0.8972972972972973
+    },
+    "Dense + BM25 + Graph": {
+      "MRR@5": 0.7644144144144144,
+      "NDCG@5": 0.6902786700419641,
+      "Recall@5": 0.7373873873873873,
+      "P@5": 0.3297297297297297,
+      "MAP@5": 0.6276951951951952,
+      "Hit@1": 0.6756756756756757,
+      "Recall@10": 0.8927927927927928
+    },
+    "Full Tracex (+ Reranker)": {
+      "MRR@5": 0.9094594594594594,
+      "NDCG@5": 0.7959137529561059,
+      "Recall@5": 0.7896396396396397,
+      "P@5": 0.32432432432432434,
+      "MAP@5": 0.71490990990991,
+      "Hit@1": 0.8648648648648649,
+      "Recall@10": 0.8747747747747748
+    }
+  },
+  "confidence_intervals": {
+    "BM25|MRR@5": [
+      0.6810810810810811,
+      0.8873873873873872
+    ],
+    "BM25|NDCG@5": [
+      0.5624054251386411,
+      0.7727627814507991
+    ],
+    "BM25|Recall@5": [
+      0.6099099099099099,
+      0.8135135135135135
+    ],
+    "Dense|MRR@5": [
+      0.7418918918918919,
+      0.9387499999999999
+    ],
+    "Dense|NDCG@5": [
+      0.6719461696666389,
+      0.853199035108752
+    ],
+    "Dense|Recall@5": [
+      0.6918693693693695,
+      0.8837837837837836
+    ],
+    "Dense + BM25|MRR@5": [
+      0.7657545045045046,
+      0.9513513513513514
+    ],
+    "Dense + BM25|NDCG@5": [
+      0.6485587664366042,
+      0.8433467579550843
+    ],
+    "Dense + BM25|Recall@5": [
+      0.6963963963963964,
+      0.8765878378378378
+    ],
+    "Dense + BM25 + Graph|MRR@5": [
+      0.6418918918918919,
+      0.8761261261261261
+    ],
+    "Dense + BM25 + Graph|NDCG@5": [
+      0.5769956883769959,
+      0.7981602633771848
+    ],
+    "Dense + BM25 + Graph|Recall@5": [
+      0.6247747747747748,
+      0.8436936936936936
+    ],
+    "Full Tracex (+ Reranker)|MRR@5": [
+      0.8256756756756757,
+      0.9783783783783785
+    ],
+    "Full Tracex (+ Reranker)|NDCG@5": [
+      0.7140910362251008,
+      0.8727005478986363
+    ],
+    "Full Tracex (+ Reranker)|Recall@5": [
+      0.6995495495495495,
+      0.8738738738738739
+    ],
+    "Dense + BM25 + Graph (CV-tuned)|MRR@5": [
+      0.6899399399399401,
+      0.8993993993993994
+    ],
+    "Dense + BM25 + Graph (CV-tuned)|NDCG@5": [
+      0.6314096597837365,
+      0.8194969104398994
+    ],
+    "Dense + BM25 + Graph (CV-tuned)|Recall@5": [
+      0.7004504504504505,
+      0.8956456456456455
+    ],
+    "Full Tracex (+ Reranker) (CV-tuned)|MRR@5": [
+      0.8094594594594595,
+      0.9684684684684683
+    ],
+    "Full Tracex (+ Reranker) (CV-tuned)|NDCG@5": [
+      0.6992036990976463,
+      0.8637834674252592
+    ],
+    "Full Tracex (+ Reranker) (CV-tuned)|Recall@5": [
+      0.679129129129129,
+      0.863063063063063
+    ]
+  },
+  "significance": [
+    {
+      "system": "Dense",
+      "metric": "MRR@5",
+      "delta": 0.056306306306306286,
+      "p_value": 0.36546345365463456,
+      "p_adjusted": 1.0,
+      "baseline": "BM25",
+      "significant": false
+    },
+    {
+      "system": "Dense",
+      "metric": "NDCG@5",
+      "delta": 0.09598333146479632,
+      "p_value": 0.033596640335966405,
+      "p_adjusted": 0.16798320167983202,
+      "baseline": "BM25",
+      "significant": false
+    },
+    {
+      "system": "Dense + BM25",
+      "metric": "MRR@5",
+      "delta": 0.07522522522522523,
+      "p_value": 0.06919308069193081,
+      "p_adjusted": 0.27677232276772323,
+      "baseline": "BM25",
+      "significant": false
+    },
+    {
+      "system": "Dense + BM25",
+      "metric": "NDCG@5",
+      "delta": 0.07803450181936122,
+      "p_value": 0.011198880111988802,
+      "p_adjusted": 0.06719328067193281,
+      "baseline": "BM25",
+      "significant": false
+    },
+    {
+      "system": "Dense + BM25 + Graph",
+      "metric": "MRR@5",
+      "delta": -0.024774774774774744,
+      "p_value": 0.7205279472052795,
+      "p_adjusted": 1.0,
+      "baseline": "BM25",
+      "significant": false
+    },
+    {
+      "system": "Dense + BM25 + Graph",
+      "metric": "NDCG@5",
+      "delta": 0.02027204230313051,
+      "p_value": 0.7358264173582642,
+      "p_adjusted": 1.0,
+      "baseline": "BM25",
+      "significant": false
+    },
+    {
+      "system": "Full Tracex (+ Reranker)",
+      "metric": "MRR@5",
+      "delta": 0.12027027027027026,
+      "p_value": 0.0010998900109989002,
+      "p_adjusted": 0.007699230076992301,
+      "baseline": "BM25",
+      "significant": true
+    },
+    {
+      "system": "Full Tracex (+ Reranker)",
+      "metric": "NDCG@5",
+      "delta": 0.12590712521727232,
+      "p_value": 9.999000099990002e-05,
+      "p_adjusted": 0.0007999200079992001,
+      "baseline": "BM25",
+      "significant": true
+    }
+  ],
+  "by_category": {
+    "BM25": {
+      "lexical": 0.9571030384942478,
+      "semantic": 0.5697323592066099,
+      "structural": 0.49154067455999484
+    },
+    "Dense": {
+      "lexical": 0.9754579975722288,
+      "semantic": 0.7199014577079816,
+      "structural": 0.6064511307886497
+    },
+    "Dense + BM25": {
+      "lexical": 0.9710391095214267,
+      "semantic": 0.7090199811088534,
+      "structural": 0.567316060415083
+    },
+    "Dense + BM25 + Graph": {
+      "lexical": 0.8385435217715956,
+      "semantic": 0.5760116877468466,
+      "structural": 0.6658030491320431
+    },
+    "Full Tracex (+ Reranker)": {
+      "lexical": 1.0,
+      "semantic": 0.7266014354473018,
+      "structural": 0.6669158498800828
+    }
+  },
+  "latency_ms": {
+    "BM25": {
+      "p50": 0.18119998276233673,
+      "p95": 0.3333599539473652
+    },
+    "Dense": {
+      "p50": 26.88519994262606,
+      "p95": 37.08527998533099
+    },
+    "Dense + BM25": {
+      "p50": 52.03580006491393,
+      "p95": 84.15654005948454
+    },
+    "Dense + BM25 + Graph": {
+      "p50": 57.424800004810095,
+      "p95": 91.4721199544146
+    },
+    "Full Tracex (+ Reranker)": {
+      "p50": 891.1937999073416,
+      "p95": 1513.259180029854
+    }
+  },
+  "per_query": {
+    "BM25": {
+      "lex-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::LimitExceededError",
+          "web/src/auth/session.ts::isTokenExpired"
+        ]
+      },
+      "lex-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::SignatureError"
+        ]
+      },
+      "lex-03": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7967075809905066,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::PaymentRepository",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository.__init__",
+          "billing/payments.py::charge_customer",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/invoices.py::generate_invoice",
+          "billing/invoices.py::render_invoice_pdf"
+        ]
+      },
+      "lex-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::compute_backoff",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::generate_invoice"
+        ]
+      },
+      "lex-05": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/auth/session.ts::logout"
+        ]
+      },
+      "lex-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/api/client.ts::ApiClient",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "web/src/auth/session.ts::logout",
+          "billing/storage.py::UsageStore.default",
+          "billing/limits.py::SpendingPolicy",
+          "billing/limits.py::check_limit"
+        ]
+      },
+      "lex-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::formatCurrency",
+          "web/src/utils/currency.ts::parseAmount",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "web/src/api/client.ts::ApiError.constructor",
+          "web/src/api/client.ts::ApiError",
+          "billing/payments.py::PaymentGateway"
+        ]
+      },
+      "lex-08": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "web/src/auth/session.ts::logout",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "billing/payments.py::PaymentGateway",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/payments.py::refund_payment"
+        ]
+      },
+      "lex-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6885288809404666,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.8333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::AuditLog",
+          "billing/storage.py::AuditLog.__init__",
+          "billing/storage.py::AuditLog.record",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::WebhookReceiver.handle"
+        ]
+      },
+      "lex-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::WebhookReceiver._on_dispute"
+        ]
+      },
+      "lex-11": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::generate_invoice",
+          "billing/notifications.py::EmailTemplate",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable.toggleSort",
+          "billing/notifications.py::send_receipt_email",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable"
+        ]
+      },
+      "lex-12": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/storage.py::UsageStore",
+          "billing/limits.py::fetch_usage",
+          "billing/storage.py::UsageStore.default",
+          "billing/storage.py::UsageStore.__init__",
+          "billing/storage.py::UsageStore.increment",
+          "billing/payments.py::charge_customer",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/notifications.py::notify_slack",
+          "billing/invoices.py::compute_tax"
+        ]
+      },
+      "sem-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.804532155482531,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 0.9166666666666666,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::check_limit",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::fetch_usage",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/storage.py::PaymentRepository.save",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "web/src/api/client.ts::ApiClient"
+        ]
+      },
+      "sem-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.27541155237618664,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::PaymentGateway",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "billing/payments.py::refund_payment"
+        ]
+      },
+      "sem-03": {
+        "MRR@5": 0.3333333333333333,
+        "NDCG@5": 0.12103812696590094,
+        "Recall@5": 0.3333333333333333,
+        "P@5": 0.2,
+        "MAP@5": 0.1111111111111111,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry.decorator",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/retry.py::compute_backoff",
+          "billing/payments.py::charge_customer",
+          "billing/retry.py::retry"
+        ]
+      },
+      "sem-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::parseAmount",
+          "web/src/utils/currency.ts::formatCurrency",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/limits.py::fetch_usage",
+          "billing/invoices.py::compute_tax",
+          "web/src/api/client.ts::ApiClient",
+          "billing/notifications.py::send_receipt_email",
+          "billing/webhooks.py::parse_event",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/payments.py::PaymentGateway.create_charge"
+        ]
+      },
+      "sem-05": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.6309297535714574,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::parseAmount",
+          "web/src/utils/currency.ts::formatCurrency",
+          "billing/storage.py::AuditLog.record",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/notifications.py::EmailTemplate",
+          "billing/retry.py::compute_backoff",
+          "billing/notifications.py::send_receipt_email",
+          "billing/webhooks.py::SignatureError",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/webhooks.py::parse_event"
+        ]
+      },
+      "sem-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8262346571285599,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/invoices.py::compute_tax",
+          "billing/payments.py::charge_customer",
+          "billing/notifications.py::send_receipt_email",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/storage.py::PaymentRepository",
+          "web/src/api/client.ts::ApiClient"
+        ]
+      },
+      "sem-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::apply_discount",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/invoices.py::generate_invoice",
+          "web/src/api/client.ts::ApiClient",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/payments.py::LimitExceededError",
+          "billing/invoices.py::compute_tax",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::refund_payment",
+          "billing/retry.py::retry"
+        ]
+      },
+      "sem-08": {
+        "MRR@5": 0.0,
+        "NDCG@5": 0.0,
+        "Recall@5": 0.0,
+        "P@5": 0.0,
+        "MAP@5": 0.0,
+        "Hit@1": 0.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "web/src/utils/currency.ts::parseAmount",
+          "billing/notifications.py::send_receipt_email",
+          "billing/invoices.py::compute_tax",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/invoices.py::generate_invoice",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::refund_payment"
+        ]
+      },
+      "sem-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.9639404333166532,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.8333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::charge_customer",
+          "billing/notifications.py::EmailTemplate",
+          "web/src/api/client.ts::ApiClient",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/notifications.py::EmailTemplate.__init__",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/payments.py::LimitExceededError",
+          "billing/invoices.py::compute_tax",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession"
+        ]
+      },
+      "sem-10": {
+        "MRR@5": 0.3333333333333333,
+        "NDCG@5": 0.5,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 0.3333333333333333,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/notifications.py::send_receipt_email",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/auth/session.ts::logout",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/payments.py::refund_payment",
+          "billing/invoices.py::render_invoice_pdf",
+          "web/src/utils/currency.ts::parseAmount",
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/invoices.py::compute_tax"
+        ]
+      },
+      "sem-11": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8262346571285599,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/payments.py::LimitExceededError",
+          "billing/storage.py::AuditLog.record",
+          "billing/payments.py::charge_customer",
+          "billing/notifications.py::EmailTemplate",
+          "billing/retry.py::retry",
+          "billing/retry.py::compute_backoff",
+          "billing/notifications.py::send_receipt_email",
+          "billing/webhooks.py::SignatureError",
+          "web/src/utils/currency.ts::parseAmount"
+        ]
+      },
+      "sem-12": {
+        "MRR@5": 0.0,
+        "NDCG@5": 0.0,
+        "Recall@5": 0.0,
+        "P@5": 0.0,
+        "MAP@5": 0.0,
+        "Hit@1": 0.0,
+        "Recall@10": 0.0,
+        "ranked": [
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/invoices.py::Invoice",
+          "billing/limits.py::fetch_usage",
+          "billing/storage.py::PaymentRepository",
+          "billing/limits.py::check_limit",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/storage.py::UsageStore",
+          "billing/invoices.py::apply_discount"
+        ]
+      },
+      "sem-13": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.45819933371607996,
+        "Recall@5": 0.3333333333333333,
+        "P@5": 0.2,
+        "MAP@5": 0.16666666666666666,
+        "Hit@1": 0.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "billing/invoices.py::generate_invoice",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "web/src/api/client.ts::ApiClient",
+          "billing/limits.py::fetch_usage",
+          "billing/webhooks.py::parse_event",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/retry.py::retry",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/invoices.py::render_invoice_pdf"
+        ]
+      },
+      "str-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7943233365467345,
+        "Recall@5": 0.6,
+        "P@5": 0.6,
+        "MAP@5": 0.4833333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 0.8,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::check_limit",
+          "billing/notifications.py::send_receipt_email",
+          "billing/retry.py::retry",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::PaymentGateway",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/payments.py::PaymentGateway.create_refund"
+        ]
+      },
+      "str-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6885288809404666,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.8333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/payments.py::LimitExceededError",
+          "billing/payments.py::charge_customer",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/limits.py::SpendingPolicy",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/webhooks.py::SignatureError"
+        ]
+      },
+      "str-03": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.4437016069115603,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.38888888888888884,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::AuditLog",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::AuditLog.record",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/storage.py::AuditLog.__init__",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/invoices.py::compute_tax",
+          "billing/webhooks.py::WebhookReceiver.handle"
+        ]
+      },
+      "str-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8262346571285599,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::refund_payment",
+          "billing/notifications.py::send_receipt_email",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/storage.py::AuditLog.record",
+          "billing/payments.py::charge_customer"
+        ]
+      },
+      "str-05": {
+        "MRR@5": 0.3333333333333333,
+        "NDCG@5": 0.10104155414609708,
+        "Recall@5": 0.2,
+        "P@5": 0.2,
+        "MAP@5": 0.06666666666666667,
+        "Hit@1": 0.0,
+        "Recall@10": 0.2,
+        "ranked": [
+          "billing/payments.py::PaymentGateway",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::PaymentGateway.__init__",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/retry.py::retry",
+          "web/src/api/client.ts::ApiError",
+          "web/src/api/client.ts::ApiClient.constructor",
+          "web/src/api/client.ts::ApiError.constructor",
+          "web/src/api/client.ts::ApiClient.getInvoices"
+        ]
+      },
+      "str-06": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.49974546512912627,
+        "Recall@5": 0.5,
+        "P@5": 0.4,
+        "MAP@5": 0.225,
+        "Hit@1": 0.0,
+        "Recall@10": 0.75,
+        "ranked": [
+          "web/src/api/client.ts::ApiClient",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/auth/session.ts::getStoredToken",
+          "billing/payments.py::PaymentGateway",
+          "web/src/api/client.ts::ApiClient.constructor",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/api/client.ts::ApiError",
+          "web/src/api/client.ts::ApiError.constructor"
+        ]
+      },
+      "str-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7959761332981399,
+        "Recall@5": 0.5,
+        "P@5": 0.4,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::parse_event",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::SignatureError",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver._on_dispute"
+        ]
+      },
+      "str-08": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.3927318696271045,
+        "Recall@5": 0.5,
+        "P@5": 0.4,
+        "MAP@5": 0.225,
+        "Hit@1": 0.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/invoices.py::compute_tax",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::generate_invoice",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/limits.py::fetch_usage",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed"
+        ]
+      },
+      "str-09": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.35098520806348704,
+        "Recall@5": 0.3333333333333333,
+        "P@5": 0.2,
+        "MAP@5": 0.16666666666666666,
+        "Hit@1": 0.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/limits.py::fetch_usage",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/limits.py::SpendingPolicy",
+          "billing/storage.py::UsageStore",
+          "billing/storage.py::UsageStore.default",
+          "billing/invoices.py::generate_invoice",
+          "billing/invoices.py::apply_discount"
+        ]
+      },
+      "str-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.27541155237618664,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::retry",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::compute_backoff",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::parse_event",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::PaymentGateway",
+          "billing/notifications.py::EmailTemplate",
+          "billing/payments.py::PaymentGateway._request"
+        ]
+      },
+      "str-11": {
+        "MRR@5": 0.2,
+        "NDCG@5": 0.09364787839833931,
+        "Recall@5": 0.3333333333333333,
+        "P@5": 0.2,
+        "MAP@5": 0.06666666666666667,
+        "Hit@1": 0.0,
+        "Recall@10": 0.3333333333333333,
+        "ranked": [
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/storage.py::UsageStore.increment",
+          "billing/webhooks.py::parse_event",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/storage.py::UsageStore.__init__"
+        ]
+      },
+      "str-12": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6361599521541359,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/payments.py::LimitExceededError",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/retry.py::retry",
+          "billing/notifications.py::notify_slack",
+          "web/src/utils/currency.ts::parseAmount",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::WebhookReceiver.__init__"
+        ]
+      }
+    },
+    "Dense": {
+      "lex-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/payments.py::LimitExceededError",
+          "billing/retry.py::compute_backoff",
+          "billing/limits.py::SpendingPolicy",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry.decorator",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/payments.py::charge_customer",
+          "billing/retry.py::retry",
+          "billing/limits.py::SpendingPolicy.__init__"
+        ]
+      },
+      "lex-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::SignatureError",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/webhooks.py::parse_event",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::PaymentGateway.__init__",
+          "billing/webhooks.py::WebhookReceiver._on_dispute"
+        ]
+      },
+      "lex-03": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.944847956559586,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.75,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::PaymentRepository.save",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/storage.py::PaymentRepository",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::charge_customer",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::PaymentRepository.__init__"
+        ]
+      },
+      "lex-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.9639404333166532,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.8333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::compute_backoff",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/payments.py::PaymentGateway",
+          "billing/limits.py::SpendingPolicy",
+          "billing/limits.py::check_limit"
+        ]
+      },
+      "lex-05": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/auth/session.ts::logout",
+          "billing/payments.py::PaymentGateway._request",
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/api/client.ts::ApiClient",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry"
+        ]
+      },
+      "lex-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/auth/session.ts::logout",
+          "billing/limits.py::check_limit",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/limits.py::SpendingPolicy"
+        ]
+      },
+      "lex-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::formatCurrency",
+          "web/src/utils/currency.ts::parseAmount",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::apply_discount",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/limits.py::fetch_usage",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/invoices.py::generate_invoice",
+          "billing/notifications.py::send_receipt_email"
+        ]
+      },
+      "lex-08": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/payments.py::PaymentGateway._request",
+          "web/src/auth/session.ts::logout",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/api/client.ts::ApiClient",
+          "billing/storage.py::PaymentRepository.__init__",
+          "billing/payments.py::PaymentGateway.__init__",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::PaymentGateway"
+        ]
+      },
+      "lex-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7967075809905066,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::AuditLog",
+          "billing/storage.py::AuditLog.record",
+          "billing/storage.py::AuditLog.__init__",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/invoices.py::Invoice",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::parse_event"
+        ]
+      },
+      "lex-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/notifications.py::send_receipt_email",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/notifications.py::EmailTemplate",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/notifications.py::EmailTemplate.__init__",
+          "billing/webhooks.py::WebhookReceiver.__init__"
+        ]
+      },
+      "lex-11": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::generate_invoice",
+          "billing/notifications.py::send_receipt_email",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/notifications.py::EmailTemplate",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::PaymentGateway.create_charge"
+        ]
+      },
+      "lex-12": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/limits.py::fetch_usage",
+          "billing/storage.py::UsageStore",
+          "billing/invoices.py::generate_invoice",
+          "billing/limits.py::check_limit",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/storage.py::UsageStore.__init__",
+          "billing/payments.py::charge_customer"
+        ]
+      },
+      "sem-01": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.6728853390803202,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 0.5888888888888889,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/limits.py::check_limit",
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::SpendingPolicy",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/retry.py::compute_backoff"
+        ]
+      },
+      "sem-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.631251450669265,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.75,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::PaymentGateway",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/payments.py::PaymentGateway.__init__",
+          "billing/payments.py::refund_payment"
+        ]
+      },
+      "sem-03": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6758840844016503,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 0.8055555555555555,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry",
+          "billing/retry.py::compute_backoff",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/payments.py::LimitExceededError",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::PaymentGateway",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/notifications.py::notify_slack"
+        ]
+      },
+      "sem-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::parseAmount",
+          "web/src/utils/currency.ts::formatCurrency",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::apply_discount",
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/storage.py::UsageStore.increment",
+          "billing/limits.py::check_limit",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/payments.py::charge_customer"
+        ]
+      },
+      "sem-05": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::formatCurrency",
+          "web/src/utils/currency.ts::parseAmount",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::apply_discount",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::UsageStore.increment",
+          "billing/payments.py::charge_customer"
+        ]
+      },
+      "sem-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8262346571285599,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::compute_tax",
+          "billing/payments.py::charge_customer",
+          "billing/invoices.py::apply_discount",
+          "billing/limits.py::check_limit",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/limits.py::SpendingPolicy",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::UsageStore.increment",
+          "billing/notifications.py::send_receipt_email"
+        ]
+      },
+      "sem-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::apply_discount",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::SpendingPolicy",
+          "billing/limits.py::check_limit",
+          "billing/invoices.py::compute_tax",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::SpendingPolicy.is_exempt"
+        ]
+      },
+      "sem-08": {
+        "MRR@5": 0.0,
+        "NDCG@5": 0.0,
+        "Recall@5": 0.0,
+        "P@5": 0.0,
+        "MAP@5": 0.0,
+        "Hit@1": 0.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/invoices.py::apply_discount",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/storage.py::UsageStore.increment",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::refund_payment",
+          "billing/notifications.py::send_receipt_email",
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::LimitExceededError"
+        ]
+      },
+      "sem-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8262346571285599,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::refund_payment",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/invoices.py::apply_discount"
+        ]
+      },
+      "sem-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::logout",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "web/src/api/client.ts::ApiClient"
+        ]
+      },
+      "sem-11": {
+        "MRR@5": 0.0,
+        "NDCG@5": 0.0,
+        "Recall@5": 0.0,
+        "P@5": 0.0,
+        "MAP@5": 0.0,
+        "Hit@1": 0.0,
+        "Recall@10": 0.0,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::refund_payment",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::PaymentGateway",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/storage.py::PaymentRepository",
+          "billing/storage.py::UsageStore.increment",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed"
+        ]
+      },
+      "sem-12": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8472668887613066,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.5555555555555555,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::generate_invoice",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/storage.py::UsageStore.month_to_date",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable.toggleSort",
+          "web/src/hooks/useInvoices.ts::useInvoices"
+        ]
+      },
+      "sem-13": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.878961873034099,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.6666666666666666,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/limits.py::fetch_usage",
+          "billing/invoices.py::Invoice",
+          "billing/storage.py::AuditLog.record",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/storage.py::AuditLog",
+          "web/src/api/client.ts::ApiClient.getInvoices"
+        ]
+      },
+      "str-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7337495705923308,
+        "Recall@5": 0.4,
+        "P@5": 0.4,
+        "MAP@5": 0.4,
+        "Hit@1": 1.0,
+        "Recall@10": 0.8,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::PaymentGateway",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/limits.py::SpendingPolicy",
+          "billing/limits.py::check_limit",
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::refund_payment"
+        ]
+      },
+      "str-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6885288809404666,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.8333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/payments.py::LimitExceededError",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::SpendingPolicy",
+          "billing/retry.py::compute_backoff",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/limits.py::fetch_usage"
+        ]
+      },
+      "str-03": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.33220066438082313,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.3,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::AuditLog",
+          "billing/storage.py::AuditLog.record",
+          "billing/storage.py::AuditLog.__init__",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository",
+          "billing/storage.py::UsageStore"
+        ]
+      },
+      "str-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/payments.py::LimitExceededError",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/limits.py::check_limit",
+          "billing/payments.py::PaymentGateway._request"
+        ]
+      },
+      "str-05": {
+        "MRR@5": 0.25,
+        "NDCG@5": 0.26109737257216487,
+        "Recall@5": 0.2,
+        "P@5": 0.2,
+        "MAP@5": 0.05,
+        "Hit@1": 0.0,
+        "Recall@10": 0.4,
+        "ranked": [
+          "billing/payments.py::PaymentGateway",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/payments.py::PaymentGateway.__init__",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/api/client.ts::ApiClient.constructor"
+        ]
+      },
+      "str-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.9751957567060058,
+        "Recall@5": 1.0,
+        "P@5": 0.8,
+        "MAP@5": 0.8875,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/payments.py::PaymentGateway._request",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/api/client.ts::ApiClient.constructor",
+          "billing/payments.py::PaymentGateway",
+          "billing/payments.py::PaymentGateway.__init__"
+        ]
+      },
+      "str-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7424693355471289,
+        "Recall@5": 0.5,
+        "P@5": 0.4,
+        "MAP@5": 0.35,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::parse_event",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/storage.py::AuditLog",
+          "billing/notifications.py::notify_slack"
+        ]
+      },
+      "str-08": {
+        "MRR@5": 0.3333333333333333,
+        "NDCG@5": 0.4232448892278954,
+        "Recall@5": 0.5,
+        "P@5": 0.4,
+        "MAP@5": 0.20833333333333331,
+        "Hit@1": 0.0,
+        "Recall@10": 0.75,
+        "ranked": [
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/invoices.py::generate_invoice",
+          "billing/invoices.py::compute_tax",
+          "billing/storage.py::UsageStore.increment",
+          "billing/invoices.py::apply_discount",
+          "billing/storage.py::UsageStore.__init__",
+          "billing/notifications.py::send_receipt_email",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "billing/storage.py::UsageStore.month_to_date"
+        ]
+      },
+      "str-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6732934624429354,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.6666666666666666,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::fetch_usage",
+          "billing/storage.py::UsageStore",
+          "billing/storage.py::UsageStore.increment",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/storage.py::UsageStore.__init__",
+          "billing/limits.py::check_limit",
+          "billing/payments.py::charge_customer",
+          "billing/storage.py::UsageStore.default",
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::apply_discount"
+        ]
+      },
+      "str-10": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.4933965394160924,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.45,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::compute_backoff",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/payments.py::PaymentGateway",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/payments.py::LimitExceededError",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "web/src/api/client.ts::ApiError"
+        ]
+      },
+      "str-11": {
+        "MRR@5": 0.2,
+        "NDCG@5": 0.2809436351950179,
+        "Recall@5": 0.3333333333333333,
+        "P@5": 0.2,
+        "MAP@5": 0.06666666666666667,
+        "Hit@1": 0.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/invoices.py::Invoice",
+          "billing/storage.py::UsageStore.__init__",
+          "billing/invoices.py::generate_invoice",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/storage.py::UsageStore.increment",
+          "billing/invoices.py::compute_tax",
+          "billing/storage.py::UsageStore.month_to_date",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "web/src/components/InvoiceTable.tsx::sortInvoices"
+        ]
+      },
+      "str-12": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6732934624429354,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.6666666666666666,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::parse_event",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/notifications.py::send_receipt_email"
+        ]
+      }
+    },
+    "Dense + BM25": {
+      "lex-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/payments.py::LimitExceededError",
+          "billing/payments.py::charge_customer",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/retry.py::compute_backoff",
+          "billing/limits.py::SpendingPolicy",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry.decorator",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/retry.py::retry"
+        ]
+      },
+      "lex-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/webhooks.py::parse_event",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::PaymentGateway.__init__",
+          "billing/webhooks.py::WebhookReceiver._on_dispute"
+        ]
+      },
+      "lex-03": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::PaymentRepository.save",
+          "billing/storage.py::PaymentRepository",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/payments.py::charge_customer",
+          "billing/storage.py::PaymentRepository.__init__",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/payments.py::PaymentGateway.create_charge"
+        ]
+      },
+      "lex-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.9639404333166532,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.8333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::compute_backoff",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/payments.py::PaymentGateway"
+        ]
+      },
+      "lex-05": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/auth/session.ts::logout",
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry"
+        ]
+      },
+      "lex-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "web/src/auth/session.ts::logout",
+          "billing/limits.py::check_limit",
+          "billing/limits.py::SpendingPolicy",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::refund_payment"
+        ]
+      },
+      "lex-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::formatCurrency",
+          "web/src/utils/currency.ts::parseAmount",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::PaymentGateway",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::apply_discount",
+          "billing/storage.py::UsageStore.month_to_date",
+          "web/src/api/client.ts::ApiError.constructor",
+          "billing/limits.py::fetch_usage"
+        ]
+      },
+      "lex-08": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/auth/session.ts::logout",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/auth/session.ts::getStoredToken",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::PaymentGateway",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/payments.py::charge_customer"
+        ]
+      },
+      "lex-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6885288809404666,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.8333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::AuditLog",
+          "billing/storage.py::AuditLog.__init__",
+          "billing/storage.py::AuditLog.record",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/payments.py::refund_payment",
+          "billing/invoices.py::Invoice",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/webhooks.py::parse_event"
+        ]
+      },
+      "lex-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/notifications.py::send_receipt_email",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/notifications.py::EmailTemplate",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/notifications.py::EmailTemplate.__init__",
+          "billing/webhooks.py::WebhookReceiver.__init__"
+        ]
+      },
+      "lex-11": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/invoices.py::Invoice",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/invoices.py::generate_invoice",
+          "billing/notifications.py::EmailTemplate",
+          "billing/notifications.py::send_receipt_email",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "web/src/hooks/useInvoices.ts::useInvoices"
+        ]
+      },
+      "lex-12": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/limits.py::fetch_usage",
+          "billing/storage.py::UsageStore",
+          "billing/storage.py::UsageStore.__init__",
+          "billing/limits.py::check_limit",
+          "billing/payments.py::charge_customer",
+          "billing/storage.py::UsageStore.default",
+          "billing/storage.py::UsageStore.increment",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/storage.py::PaymentRepository"
+        ]
+      },
+      "sem-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8213137146137828,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::check_limit",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::refund_payment",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/invoices.py::apply_discount",
+          "billing/limits.py::fetch_usage",
+          "billing/retry.py::retry"
+        ]
+      },
+      "sem-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.27541155237618664,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/payments.py::PaymentGateway",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::refund_payment",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/storage.py::PaymentRepository.get",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/api/client.ts::ApiClient.request"
+        ]
+      },
+      "sem-03": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6484938358340886,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 0.7000000000000001,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry.decorator",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/retry.py::compute_backoff",
+          "billing/retry.py::retry",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/payments.py::LimitExceededError"
+        ]
+      },
+      "sem-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::parseAmount",
+          "web/src/utils/currency.ts::formatCurrency",
+          "billing/invoices.py::compute_tax",
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::charge_customer",
+          "billing/invoices.py::apply_discount",
+          "billing/limits.py::check_limit",
+          "billing/storage.py::PaymentRepository.save"
+        ]
+      },
+      "sem-05": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::formatCurrency",
+          "web/src/utils/currency.ts::parseAmount",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/notifications.py::send_receipt_email",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::apply_discount",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/payments.py::charge_customer",
+          "billing/notifications.py::EmailTemplate"
+        ]
+      },
+      "sem-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8262346571285599,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::compute_tax",
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/notifications.py::send_receipt_email",
+          "billing/invoices.py::apply_discount",
+          "billing/payments.py::LimitExceededError",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "web/src/api/client.ts::ApiClient"
+        ]
+      },
+      "sem-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::apply_discount",
+          "billing/invoices.py::generate_invoice",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/invoices.py::compute_tax",
+          "billing/payments.py::LimitExceededError",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/payments.py::refund_payment",
+          "billing/payments.py::charge_customer",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::PaymentGateway.create_charge"
+        ]
+      },
+      "sem-08": {
+        "MRR@5": 0.0,
+        "NDCG@5": 0.0,
+        "Recall@5": 0.0,
+        "P@5": 0.0,
+        "MAP@5": 0.0,
+        "Hit@1": 0.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/invoices.py::compute_tax",
+          "billing/notifications.py::send_receipt_email",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "web/src/utils/currency.ts::parseAmount",
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::LimitExceededError"
+        ]
+      },
+      "sem-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.9327783893101107,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.7,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/notifications.py::EmailTemplate",
+          "billing/payments.py::refund_payment",
+          "billing/notifications.py::EmailTemplate.__init__",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::LimitExceededError"
+        ]
+      },
+      "sem-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::logout",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/api/client.ts::ApiClient",
+          "billing/notifications.py::send_receipt_email",
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "billing/payments.py::refund_payment",
+          "billing/invoices.py::render_invoice_pdf",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/webhooks.py::SignatureError"
+        ]
+      },
+      "sem-11": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.52129602861432,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.25,
+        "Hit@1": 0.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/payments.py::LimitExceededError",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository.save",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/storage.py::AuditLog.record",
+          "billing/invoices.py::apply_discount",
+          "billing/invoices.py::compute_tax"
+        ]
+      },
+      "sem-12": {
+        "MRR@5": 0.25,
+        "NDCG@5": 0.3127697035039474,
+        "Recall@5": 0.3333333333333333,
+        "P@5": 0.2,
+        "MAP@5": 0.08333333333333333,
+        "Hit@1": 0.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/invoices.py::generate_invoice",
+          "billing/invoices.py::Invoice",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/storage.py::PaymentRepository",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/limits.py::fetch_usage",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "web/src/api/client.ts::ApiClient.getInvoices"
+        ]
+      },
+      "sem-13": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.878961873034099,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.6666666666666666,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/limits.py::fetch_usage",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "web/src/api/client.ts::ApiClient",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/storage.py::UsageStore.month_to_date",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "billing/invoices.py::Invoice"
+        ]
+      },
+      "str-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8207820281163857,
+        "Recall@5": 0.6,
+        "P@5": 0.6,
+        "MAP@5": 0.55,
+        "Hit@1": 1.0,
+        "Recall@10": 0.8,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::check_limit",
+          "billing/payments.py::PaymentGateway",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/invoices.py::apply_discount",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession"
+        ]
+      },
+      "str-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6885288809404666,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.8333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/payments.py::LimitExceededError",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::SpendingPolicy",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/limits.py::fetch_usage",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::SignatureError"
+        ]
+      },
+      "str-03": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.35657974655158436,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.3333333333333333,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::AuditLog",
+          "billing/storage.py::AuditLog.record",
+          "billing/storage.py::AuditLog.__init__",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/storage.py::UsageStore",
+          "billing/notifications.py::send_receipt_email",
+          "billing/invoices.py::generate_invoice"
+        ]
+      },
+      "str-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.944847956559586,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.75,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/notifications.py::send_receipt_email",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/limits.py::SpendingPolicy"
+        ]
+      },
+      "str-05": {
+        "MRR@5": 0.2,
+        "NDCG@5": 0.0781764177375172,
+        "Recall@5": 0.2,
+        "P@5": 0.2,
+        "MAP@5": 0.04,
+        "Hit@1": 0.0,
+        "Recall@10": 0.4,
+        "ranked": [
+          "billing/payments.py::PaymentGateway",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/payments.py::PaymentGateway.__init__",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/webhooks.py::WebhookReceiver",
+          "web/src/api/client.ts::ApiClient.constructor",
+          "web/src/api/client.ts::ApiClient.request"
+        ]
+      },
+      "str-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8520798468101465,
+        "Recall@5": 0.75,
+        "P@5": 0.6,
+        "MAP@5": 0.5666666666666667,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/payments.py::PaymentGateway",
+          "web/src/api/client.ts::ApiClient.constructor",
+          "web/src/api/client.ts::ApiClient.getInvoices"
+        ]
+      },
+      "str-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7672735788411231,
+        "Recall@5": 0.5,
+        "P@5": 0.4,
+        "MAP@5": 0.41666666666666663,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::parse_event",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/payments.py::charge_customer"
+        ]
+      },
+      "str-08": {
+        "MRR@5": 0.3333333333333333,
+        "NDCG@5": 0.3928505775795454,
+        "Recall@5": 0.5,
+        "P@5": 0.4,
+        "MAP@5": 0.20833333333333331,
+        "Hit@1": 0.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::generate_invoice",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/notifications.py::send_receipt_email"
+        ]
+      },
+      "str-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.649014791936513,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.5555555555555555,
+        "Hit@1": 1.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "billing/limits.py::fetch_usage",
+          "billing/limits.py::check_limit",
+          "billing/storage.py::UsageStore",
+          "billing/storage.py::UsageStore.increment",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/storage.py::UsageStore.__init__",
+          "billing/storage.py::UsageStore.default",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/invoices.py::generate_invoice"
+        ]
+      },
+      "str-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.27541155237618664,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::retry",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::compute_backoff",
+          "billing/payments.py::PaymentGateway",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/webhooks.py::SignatureError",
+          "billing/payments.py::LimitExceededError",
+          "billing/notifications.py::EmailTemplate",
+          "billing/notifications.py::send_receipt_email"
+        ]
+      },
+      "str-11": {
+        "MRR@5": 0.2,
+        "NDCG@5": 0.09364787839833931,
+        "Recall@5": 0.3333333333333333,
+        "P@5": 0.2,
+        "MAP@5": 0.06666666666666667,
+        "Hit@1": 0.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::UsageStore.__init__",
+          "billing/storage.py::UsageStore.increment",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "billing/invoices.py::Invoice",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/storage.py::PaymentRepository.get",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable"
+        ]
+      },
+      "str-12": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8885994691336017,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 0.8055555555555555,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::parse_event",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/notifications.py::send_receipt_email"
+        ]
+      }
+    },
+    "Dense + BM25 + Graph": {
+      "lex-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/payments.py::LimitExceededError",
+          "billing/payments.py::charge_customer",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/limits.py::SpendingPolicy",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/retry.py::compute_backoff",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::PaymentGateway"
+        ]
+      },
+      "lex-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::parse_event",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/storage.py::AuditLog",
+          "billing/notifications.py::notify_slack",
+          "billing/storage.py::AuditLog.record"
+        ]
+      },
+      "lex-03": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::PaymentRepository.save",
+          "billing/storage.py::PaymentRepository",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::charge_customer",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/payments.py::PaymentGateway.create_charge"
+        ]
+      },
+      "lex-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::compute_backoff",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::generate_invoice",
+          "billing/retry.py::retry.decorator",
+          "billing/payments.py::PaymentGateway",
+          "billing/invoices.py::apply_discount",
+          "billing/payments.py::charge_customer",
+          "billing/storage.py::PaymentRepository.list_by_customer"
+        ]
+      },
+      "lex-05": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/auth/session.ts::logout",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "billing/payments.py::PaymentGateway",
+          "web/src/api/client.ts::ApiError"
+        ]
+      },
+      "lex-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/auth/session.ts::logout",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/limits.py::check_limit",
+          "billing/limits.py::SpendingPolicy",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::refund_payment"
+        ]
+      },
+      "lex-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::formatCurrency",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "web/src/utils/currency.ts::parseAmount",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::PaymentGateway",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/limits.py::fetch_usage",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::check_limit"
+        ]
+      },
+      "lex-08": {
+        "MRR@5": 0.2,
+        "NDCG@5": 0.38685280723454163,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 0.2,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::logout",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::charge_customer",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/payments.py::refund_payment",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/auth/session.ts::getStoredToken",
+          "billing/payments.py::PaymentGateway",
+          "billing/payments.py::PaymentGateway.create_refund"
+        ]
+      },
+      "lex-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7967075809905066,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::AuditLog",
+          "billing/storage.py::AuditLog.record",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::AuditLog.__init__",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/webhooks.py::parse_event",
+          "billing/storage.py::PaymentRepository"
+        ]
+      },
+      "lex-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::parse_event",
+          "billing/storage.py::AuditLog",
+          "billing/storage.py::AuditLog.record",
+          "billing/storage.py::PaymentRepository.save"
+        ]
+      },
+      "lex-11": {
+        "MRR@5": 0.0,
+        "NDCG@5": 0.0,
+        "Recall@5": 0.0,
+        "P@5": 0.0,
+        "MAP@5": 0.0,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::generate_invoice",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable.toggleSort",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/notifications.py::EmailTemplate",
+          "billing/notifications.py::send_receipt_email"
+        ]
+      },
+      "lex-12": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.878961873034099,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.6666666666666666,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::check_limit",
+          "billing/storage.py::UsageStore.default",
+          "billing/storage.py::UsageStore.increment",
+          "billing/storage.py::PaymentRepository",
+          "billing/notifications.py::send_receipt_email",
+          "billing/storage.py::UsageStore",
+          "billing/payments.py::PaymentGateway.create_charge"
+        ]
+      },
+      "sem-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/payments.py::LimitExceededError",
+          "billing/payments.py::charge_customer",
+          "billing/invoices.py::apply_discount",
+          "billing/limits.py::SpendingPolicy",
+          "billing/invoices.py::generate_invoice",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/limits.py::fetch_usage",
+          "billing/notifications.py::send_receipt_email",
+          "billing/storage.py::PaymentRepository.save"
+        ]
+      },
+      "sem-02": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.17376534287144002,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.25,
+        "Hit@1": 0.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/payments.py::PaymentGateway._request",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository.get",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::parse_event"
+        ]
+      },
+      "sem-03": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7002755876478819,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.6666666666666666,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::compute_backoff",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/payments.py::LimitExceededError",
+          "billing/payments.py::PaymentGateway"
+        ]
+      },
+      "sem-04": {
+        "MRR@5": 0.0,
+        "NDCG@5": 0.0,
+        "Recall@5": 0.0,
+        "P@5": 0.0,
+        "MAP@5": 0.0,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::check_limit",
+          "billing/notifications.py::send_receipt_email",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/storage.py::UsageStore.increment",
+          "billing/payments.py::LimitExceededError",
+          "web/src/utils/currency.ts::parseAmount"
+        ]
+      },
+      "sem-05": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::formatCurrency",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::charge_customer",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/payments.py::LimitExceededError",
+          "web/src/utils/currency.ts::parseAmount",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/invoices.py::compute_tax"
+        ]
+      },
+      "sem-06": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.6278397607958708,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.45,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/invoices.py::compute_tax",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/invoices.py::generate_invoice",
+          "billing/invoices.py::apply_discount",
+          "billing/payments.py::LimitExceededError",
+          "billing/storage.py::PaymentRepository",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/storage.py::PaymentRepository.list_by_customer"
+        ]
+      },
+      "sem-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::apply_discount",
+          "billing/invoices.py::generate_invoice",
+          "billing/invoices.py::compute_tax",
+          "billing/payments.py::LimitExceededError",
+          "billing/payments.py::charge_customer",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/limits.py::check_limit",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/webhooks.py::WebhookReceiver._on_dispute"
+        ]
+      },
+      "sem-08": {
+        "MRR@5": 0.0,
+        "NDCG@5": 0.0,
+        "Recall@5": 0.0,
+        "P@5": 0.0,
+        "MAP@5": 0.0,
+        "Hit@1": 0.0,
+        "Recall@10": 0.0,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/notifications.py::send_receipt_email",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::check_limit",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/storage.py::PaymentRepository"
+        ]
+      },
+      "sem-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8262346571285599,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::LimitExceededError",
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/limits.py::check_limit",
+          "billing/notifications.py::EmailTemplate"
+        ]
+      },
+      "sem-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::logout",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/payments.py::charge_customer",
+          "web/src/api/client.ts::ApiClient",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::refund_payment"
+        ]
+      },
+      "sem-11": {
+        "MRR@5": 0.0,
+        "NDCG@5": 0.0,
+        "Recall@5": 0.0,
+        "P@5": 0.0,
+        "MAP@5": 0.0,
+        "Hit@1": 0.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::LimitExceededError",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::AuditLog.record",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/invoices.py::apply_discount",
+          "billing/invoices.py::compute_tax"
+        ]
+      },
+      "sem-12": {
+        "MRR@5": 0.25,
+        "NDCG@5": 0.3127697035039474,
+        "Recall@5": 0.3333333333333333,
+        "P@5": 0.2,
+        "MAP@5": 0.08333333333333333,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/invoices.py::Invoice",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/storage.py::PaymentRepository",
+          "billing/limits.py::fetch_usage",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable.toggleSort",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/invoices.py::apply_discount"
+        ]
+      },
+      "sem-13": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8472668887613066,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.5555555555555555,
+        "Hit@1": 1.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "billing/invoices.py::generate_invoice",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/limits.py::fetch_usage",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/invoices.py::Invoice",
+          "billing/limits.py::check_limit",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/utils/currency.ts::formatCurrency"
+        ]
+      },
+      "str-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8724997542842517,
+        "Recall@5": 0.8,
+        "P@5": 0.8,
+        "MAP@5": 0.6433333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 0.8,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::LimitExceededError",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/notifications.py::send_receipt_email",
+          "billing/limits.py::check_limit",
+          "billing/retry.py::retry",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/payments.py::PaymentGateway",
+          "billing/webhooks.py::WebhookReceiver._on_dispute"
+        ]
+      },
+      "str-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6885288809404666,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.8333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/payments.py::LimitExceededError",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::SpendingPolicy",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/limits.py::fetch_usage",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/notifications.py::send_receipt_email",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/limits.py::SpendingPolicy.__init__"
+        ]
+      },
+      "str-03": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.610349860925043,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 0.5888888888888889,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::AuditLog",
+          "billing/storage.py::AuditLog.record",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/invoices.py::compute_tax",
+          "billing/storage.py::AuditLog.__init__",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/invoices.py::render_invoice_pdf"
+        ]
+      },
+      "str-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.944847956559586,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.75,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::charge_customer",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/limits.py::check_limit",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/payments.py::LimitExceededError"
+        ]
+      },
+      "str-05": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.36202949892829983,
+        "Recall@5": 0.4,
+        "P@5": 0.4,
+        "MAP@5": 0.18,
+        "Hit@1": 0.0,
+        "Recall@10": 0.4,
+        "ranked": [
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/payments.py::PaymentGateway._request",
+          "web/src/api/client.ts::ApiError",
+          "billing/payments.py::PaymentGateway",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::PaymentGateway.__init__",
+          "billing/webhooks.py::WebhookReceiver"
+        ]
+      },
+      "str-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.9751957567060058,
+        "Recall@5": 1.0,
+        "P@5": 0.8,
+        "MAP@5": 0.8875,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "web/src/api/client.ts::ApiError",
+          "web/src/auth/session.ts::logout",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "web/src/api/client.ts::ApiClient"
+        ]
+      },
+      "str-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8520798468101465,
+        "Recall@5": 0.75,
+        "P@5": 0.6,
+        "MAP@5": 0.5666666666666667,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::parse_event",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/payments.py::charge_customer"
+        ]
+      },
+      "str-08": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.4671445995090871,
+        "Recall@5": 0.5,
+        "P@5": 0.4,
+        "MAP@5": 0.29166666666666663,
+        "Hit@1": 0.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::generate_invoice",
+          "billing/limits.py::fetch_usage",
+          "billing/storage.py::UsageStore.month_to_date",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "billing/invoices.py::render_invoice_pdf",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable.toggleSort",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable"
+        ]
+      },
+      "str-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.5562983930884396,
+        "Recall@5": 0.3333333333333333,
+        "P@5": 0.2,
+        "MAP@5": 0.3333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::fetch_usage",
+          "billing/limits.py::check_limit",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/storage.py::UsageStore.default",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/payments.py::charge_customer",
+          "billing/invoices.py::apply_discount",
+          "billing/limits.py::SpendingPolicy",
+          "billing/invoices.py::compute_tax",
+          "billing/storage.py::UsageStore"
+        ]
+      },
+      "str-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.27541155237618664,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::retry",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::compute_backoff",
+          "billing/payments.py::PaymentGateway",
+          "billing/retry.py::retry.decorator",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::SignatureError",
+          "billing/payments.py::LimitExceededError",
+          "billing/notifications.py::EmailTemplate"
+        ]
+      },
+      "str-11": {
+        "MRR@5": 0.3333333333333333,
+        "NDCG@5": 0.43380783046984833,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.27777777777777773,
+        "Hit@1": 0.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "billing/invoices.py::generate_invoice",
+          "billing/invoices.py::Invoice",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "billing/invoices.py::render_invoice_pdf",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable.toggleSort",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/storage.py::UsageStore.__init__"
+        ]
+      },
+      "str-12": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.9514426589871553,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::parse_event",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/storage.py::AuditLog.record",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/payments.py::charge_customer"
+        ]
+      }
+    },
+    "Full Tracex (+ Reranker)": {
+      "lex-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::fetch_usage",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/limits.py::SpendingPolicy",
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/retry.py::compute_backoff",
+          "billing/payments.py::PaymentGateway.create_charge"
+        ]
+      },
+      "lex-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::SignatureError",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/storage.py::PaymentRepository.save",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/storage.py::PaymentRepository",
+          "billing/webhooks.py::WebhookReceiver.__init__"
+        ]
+      },
+      "lex-03": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::PaymentRepository.save",
+          "billing/storage.py::PaymentRepository",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::refund_payment",
+          "billing/payments.py::charge_customer",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/storage.py::PaymentRepository.__init__",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::PaymentGateway"
+        ]
+      },
+      "lex-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::compute_backoff",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry",
+          "billing/invoices.py::compute_tax",
+          "billing/invoices.py::apply_discount",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::check_limit",
+          "billing/payments.py::PaymentGateway._request"
+        ]
+      },
+      "lex-05": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::refund_payment",
+          "billing/retry.py::retry",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/payments.py::PaymentGateway",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/retry.py::retry.decorator",
+          "web/src/auth/session.ts::getStoredToken"
+        ]
+      },
+      "lex-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/auth/session.ts::isTokenExpired",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/auth/session.ts::getStoredToken",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::refund_payment",
+          "billing/payments.py::charge_customer",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/storage.py::AuditLog.record",
+          "web/src/api/client.ts::ApiError"
+        ]
+      },
+      "lex-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::formatCurrency",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "web/src/utils/currency.ts::parseAmount",
+          "web/src/api/client.ts::ApiError.constructor",
+          "billing/retry.py::retry",
+          "web/src/api/client.ts::ApiError",
+          "billing/payments.py::PaymentGateway",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::check_limit",
+          "web/src/components/InvoiceTable.tsx::sortInvoices"
+        ]
+      },
+      "lex-08": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::refund_payment",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/payments.py::PaymentGateway",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "billing/storage.py::PaymentRepository.save"
+        ]
+      },
+      "lex-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::AuditLog.record",
+          "billing/storage.py::AuditLog",
+          "billing/storage.py::AuditLog.__init__",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/storage.py::PaymentRepository",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver.validate_signature"
+        ]
+      },
+      "lex-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/payments.py::charge_customer",
+          "billing/notifications.py::send_receipt_email",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/retry.py::retry",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed"
+        ]
+      },
+      "lex-11": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::render_invoice_pdf",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/invoices.py::generate_invoice",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "billing/notifications.py::EmailTemplate",
+          "billing/invoices.py::Invoice",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable.toggleSort"
+        ]
+      },
+      "lex-12": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/storage.py::UsageStore",
+          "billing/limits.py::fetch_usage",
+          "billing/storage.py::UsageStore.default",
+          "billing/storage.py::UsageStore.increment",
+          "billing/storage.py::UsageStore.__init__",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::check_limit",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/invoices.py::generate_invoice"
+        ]
+      },
+      "sem-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7579237460681981,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/payments.py::LimitExceededError",
+          "billing/payments.py::charge_customer",
+          "billing/limits.py::check_limit",
+          "billing/limits.py::SpendingPolicy",
+          "billing/invoices.py::generate_invoice",
+          "billing/limits.py::fetch_usage",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/payments.py::refund_payment",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/invoices.py::apply_discount"
+        ]
+      },
+      "sem-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.27541155237618664,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::refund_payment",
+          "billing/payments.py::PaymentGateway",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "web/src/api/client.ts::ApiClient",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/payments.py::charge_customer"
+        ]
+      },
+      "sem-03": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::compute_backoff",
+          "billing/retry.py::retry",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::retry.decorator",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::PaymentGateway.create_charge"
+        ]
+      },
+      "sem-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::parseAmount",
+          "web/src/utils/currency.ts::formatCurrency",
+          "billing/limits.py::fetch_usage",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/invoices.py::compute_tax",
+          "billing/payments.py::charge_customer",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/storage.py::UsageStore.increment"
+        ]
+      },
+      "sem-05": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/utils/currency.ts::formatCurrency",
+          "web/src/utils/currency.ts::parseAmount",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::PaymentGateway",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/notifications.py::send_receipt_email",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver._on_dispute"
+        ]
+      },
+      "sem-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8262346571285599,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::compute_tax",
+          "billing/payments.py::charge_customer",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/payments.py::PaymentGateway"
+        ]
+      },
+      "sem-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 1.0,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/invoices.py::apply_discount",
+          "billing/invoices.py::generate_invoice",
+          "billing/payments.py::charge_customer",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/retry.py::compute_backoff",
+          "billing/notifications.py::send_receipt_email",
+          "billing/retry.py::retry",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/payments.py::PaymentGateway.create_charge"
+        ]
+      },
+      "sem-08": {
+        "MRR@5": 0.2,
+        "NDCG@5": 0.3196311965446524,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.1,
+        "Hit@1": 0.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/invoices.py::compute_tax"
+        ]
+      },
+      "sem-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8262346571285599,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::charge_customer",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/notifications.py::EmailTemplate.render",
+          "billing/notifications.py::EmailTemplate",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/payments.py::refund_payment",
+          "billing/notifications.py::EmailTemplate.__init__"
+        ]
+      },
+      "sem-10": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.6309297535714574,
+        "Recall@5": 1.0,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 0.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "web/src/api/client.ts::ApiClient",
+          "web/src/auth/session.ts::logout",
+          "web/src/api/client.ts::ApiClient.request",
+          "billing/notifications.py::send_receipt_email",
+          "billing/webhooks.py::SignatureError",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::WebhookReceiver"
+        ]
+      },
+      "sem-11": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8262346571285599,
+        "Recall@5": 0.5,
+        "P@5": 0.2,
+        "MAP@5": 0.5,
+        "Hit@1": 1.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/payments.py::charge_customer",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::LimitExceededError",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::refund_payment",
+          "billing/invoices.py::generate_invoice"
+        ]
+      },
+      "sem-12": {
+        "MRR@5": 0.25,
+        "NDCG@5": 0.10425656783464912,
+        "Recall@5": 0.3333333333333333,
+        "P@5": 0.2,
+        "MAP@5": 0.08333333333333333,
+        "Hit@1": 0.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "billing/invoices.py::generate_invoice",
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::render_invoice_pdf",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/storage.py::UsageStore",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/invoices.py::apply_discount",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "billing/limits.py::fetch_usage",
+          "web/src/api/client.ts::ApiClient.getInvoices"
+        ]
+      },
+      "sem-13": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.878961873034099,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.6666666666666666,
+        "Hit@1": 1.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "web/src/api/client.ts::ApiClient",
+          "billing/invoices.py::Invoice",
+          "billing/limits.py::fetch_usage",
+          "billing/storage.py::UsageStore.increment",
+          "billing/invoices.py::generate_invoice",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/storage.py::UsageStore",
+          "billing/limits.py::check_limit"
+        ]
+      },
+      "str-01": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7854672967601968,
+        "Recall@5": 0.6,
+        "P@5": 0.6,
+        "MAP@5": 0.4533333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 0.8,
+        "ranked": [
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::check_limit",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "billing/notifications.py::send_receipt_email",
+          "billing/payments.py::PaymentGateway",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "web/src/api/client.ts::ApiClient"
+        ]
+      },
+      "str-02": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7967075809905066,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 1.0,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/limits.py::check_limit",
+          "billing/payments.py::charge_customer",
+          "billing/payments.py::LimitExceededError",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/limits.py::SpendingPolicy",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/limits.py::fetch_usage",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/payments.py::refund_payment",
+          "billing/webhooks.py::WebhookReceiver.handle"
+        ]
+      },
+      "str-03": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.649014791936513,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.5555555555555555,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::AuditLog",
+          "billing/storage.py::AuditLog.record",
+          "billing/storage.py::AuditLog.__init__",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/invoices.py::compute_tax"
+        ]
+      },
+      "str-04": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.9639404333166532,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.8333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/storage.py::PaymentRepository.save",
+          "billing/payments.py::refund_payment",
+          "billing/storage.py::PaymentRepository",
+          "billing/payments.py::charge_customer",
+          "billing/storage.py::PaymentRepository.get",
+          "billing/payments.py::PaymentGateway.create_refund",
+          "billing/storage.py::PaymentRepository.list_by_customer",
+          "billing/notifications.py::send_receipt_email"
+        ]
+      },
+      "str-05": {
+        "MRR@5": 0.2,
+        "NDCG@5": 0.23452925321255158,
+        "Recall@5": 0.2,
+        "P@5": 0.2,
+        "MAP@5": 0.04,
+        "Hit@1": 0.0,
+        "Recall@10": 0.4,
+        "ranked": [
+          "billing/payments.py::PaymentGateway",
+          "web/src/api/client.ts::ApiClient",
+          "billing/payments.py::PaymentGateway.__init__",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/payments.py::PaymentGateway._request",
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/api/client.ts::ApiError.constructor",
+          "billing/payments.py::PaymentGateway.create_charge",
+          "web/src/api/client.ts::ApiError",
+          "web/src/api/client.ts::ApiClient.constructor"
+        ]
+      },
+      "str-06": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.6576630675781056,
+        "Recall@5": 0.25,
+        "P@5": 0.2,
+        "MAP@5": 0.25,
+        "Hit@1": 1.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "web/src/api/client.ts::ApiClient.request",
+          "web/src/api/client.ts::ApiClient",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "web/src/api/client.ts::ApiClient.createCheckoutSession",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/payments.py::PaymentGateway",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "web/src/api/client.ts::ApiError",
+          "web/src/api/client.ts::ApiError.constructor",
+          "web/src/api/client.ts::ApiClient.constructor"
+        ]
+      },
+      "str-07": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7424693355471289,
+        "Recall@5": 0.5,
+        "P@5": 0.4,
+        "MAP@5": 0.35,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::parse_event",
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/notifications.py::notify_slack",
+          "billing/payments.py::charge_customer"
+        ]
+      },
+      "str-08": {
+        "MRR@5": 0.5,
+        "NDCG@5": 0.49974546512912627,
+        "Recall@5": 0.5,
+        "P@5": 0.4,
+        "MAP@5": 0.225,
+        "Hit@1": 0.0,
+        "Recall@10": 0.5,
+        "ranked": [
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::generate_invoice",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "billing/invoices.py::render_invoice_pdf",
+          "billing/invoices.py::compute_tax",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable.toggleSort",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "web/src/api/client.ts::ApiClient"
+        ]
+      },
+      "str-09": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.4635819942403664,
+        "Recall@5": 0.6666666666666666,
+        "P@5": 0.4,
+        "MAP@5": 0.5555555555555555,
+        "Hit@1": 1.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "billing/storage.py::UsageStore",
+          "billing/storage.py::UsageStore.month_to_date",
+          "billing/limits.py::fetch_usage",
+          "billing/limits.py::check_limit",
+          "billing/storage.py::UsageStore.default",
+          "billing/limits.py::SpendingPolicy.is_exempt",
+          "billing/storage.py::UsageStore.increment",
+          "billing/storage.py::UsageStore.__init__",
+          "billing/limits.py::SpendingPolicy.__init__",
+          "billing/invoices.py::generate_invoice"
+        ]
+      },
+      "str-10": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.5950427489208391,
+        "Recall@5": 1.0,
+        "P@5": 0.4,
+        "MAP@5": 0.7,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/retry.py::retry",
+          "billing/retry.py::retry.decorator",
+          "billing/retry.py::retry.decorator.wrapper",
+          "billing/retry.py::compute_backoff",
+          "billing/payments.py::PaymentGateway._request",
+          "billing/payments.py::PaymentGateway",
+          "web/src/auth/session.ts::refreshAccessToken",
+          "billing/payments.py::refund_payment",
+          "web/src/auth/session.ts::isTokenExpired",
+          "billing/invoices.py::generate_invoice"
+        ]
+      },
+      "str-11": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.7262287617954056,
+        "Recall@5": 0.3333333333333333,
+        "P@5": 0.2,
+        "MAP@5": 0.3333333333333333,
+        "Hit@1": 1.0,
+        "Recall@10": 0.6666666666666666,
+        "ranked": [
+          "web/src/components/InvoiceTable.tsx::InvoiceTable",
+          "web/src/components/InvoiceTable.tsx::InvoiceTable.toggleSort",
+          "web/src/components/InvoiceTable.tsx::sortInvoices",
+          "billing/invoices.py::Invoice",
+          "billing/invoices.py::generate_invoice",
+          "billing/invoices.py::render_invoice_pdf",
+          "web/src/hooks/useInvoices.ts::useInvoices",
+          "web/src/api/client.ts::ApiClient.getInvoices",
+          "billing/storage.py::UsageStore.__init__",
+          "billing/storage.py::UsageStore.increment"
+        ]
+      },
+      "str-12": {
+        "MRR@5": 1.0,
+        "NDCG@5": 0.8885994691336017,
+        "Recall@5": 1.0,
+        "P@5": 0.6,
+        "MAP@5": 0.8055555555555555,
+        "Hit@1": 1.0,
+        "Recall@10": 1.0,
+        "ranked": [
+          "billing/webhooks.py::WebhookReceiver._on_dispute",
+          "billing/webhooks.py::WebhookReceiver",
+          "billing/webhooks.py::WebhookReceiver.handle",
+          "billing/notifications.py::notify_slack",
+          "billing/webhooks.py::SignatureError",
+          "billing/webhooks.py::WebhookReceiver._on_payment_failed",
+          "billing/webhooks.py::WebhookReceiver.validate_signature",
+          "billing/webhooks.py::WebhookReceiver.__init__",
+          "billing/webhooks.py::parse_event",
+          "billing/notifications.py::send_receipt_email"
+        ]
+      }
+    }
+  },
+  "skipped": {},
+  "cross_validation": [
+    {
+      "name": "Dense + BM25 + Graph (CV-tuned)",
+      "base": "Dense + BM25 + Graph",
+      "settings": {
+        "folds": 5,
+        "repeats": 3,
+        "step": 0.1,
+        "objective": "NDCG@5",
+        "seed": 0
+      },
+      "metrics": {
+        "MRR@5": 0.8003003003003003,
+        "NDCG@5": 0.7285284150494977,
+        "Recall@5": 0.8025525525525526,
+        "P@5": 0.34054054054054056,
+        "MAP@5": 0.6626001001001002,
+        "Hit@1": 0.7207207207207208,
+        "Recall@10": 0.9130630630630631
+      },
+      "selections": [
+        {
+          "repeat": 0,
+          "fold": 0,
+          "weights": {
+            "dense": 0.9,
+            "bm25": 0.1,
+            "graph": 0.0
+          },
+          "train_score": 0.7528412021482777,
+          "test_score": 0.8387842834774739,
+          "n_test": 8
+        },
+        {
+          "repeat": 0,
+          "fold": 1,
+          "weights": {
+            "dense": 0.9,
+            "bm25": 0.1,
+            "graph": 0.0
+          },
+          "train_score": 0.778357222157656,
+          "test_score": 0.7462887109434774,
+          "n_test": 8
+        },
+        {
+          "repeat": 0,
+          "fold": 2,
+          "weights": {
+            "dense": 0.8,
+            "bm25": 0.1,
+            "graph": 0.1
+          },
+          "train_score": 0.8314451520543293,
+          "test_score": 0.4488112491386119,
+          "n_test": 7
+        },
+        {
+          "repeat": 0,
+          "fold": 3,
+          "weights": {
+            "dense": 1.0,
+            "bm25": 0.0,
+            "graph": 0.0
+          },
+          "train_score": 0.7417660117821308,
+          "test_score": 0.8698068767243406,
+          "n_test": 7
+        },
+        {
+          "repeat": 0,
+          "fold": 4,
+          "weights": {
+            "dense": 0.8,
+            "bm25": 0.1,
+            "graph": 0.1
+          },
+          "train_score": 0.7704206822173678,
+          "test_score": 0.7103446912970189,
+          "n_test": 7
+        },
+        {
+          "repeat": 1,
+          "fold": 0,
+          "weights": {
+            "dense": 1.0,
+            "bm25": 0.0,
+            "graph": 0.0
+          },
+          "train_score": 0.7294610509727704,
+          "test_score": 0.8984072515404953,
+          "n_test": 8
+        },
+        {
+          "repeat": 1,
+          "fold": 1,
+          "weights": {
+            "dense": 0.9,
+            "bm25": 0.1,
+            "graph": 0.0
+          },
+          "train_score": 0.7731105628969013,
+          "test_score": 0.7653078507637135,
+          "n_test": 8
+        },
+        {
+          "repeat": 1,
+          "fold": 2,
+          "weights": {
+            "dense": 0.9,
+            "bm25": 0.1,
+            "graph": 0.0
+          },
+          "train_score": 0.7971720850081924,
+          "test_score": 0.6610723685534391,
+          "n_test": 7
+        },
+        {
+          "repeat": 1,
+          "fold": 3,
+          "weights": {
+            "dense": 0.8,
+            "bm25": 0.1,
+            "graph": 0.1
+          },
+          "train_score": 0.758691515959649,
+          "test_score": 0.7606125466872425,
+          "n_test": 7
+        },
+        {
+          "repeat": 1,
+          "fold": 4,
+          "weights": {
+            "dense": 0.8,
+            "bm25": 0.1,
+            "graph": 0.1
+          },
+          "train_score": 0.8325544537056392,
+          "test_score": 0.4440570992044272,
+          "n_test": 7
+        },
+        {
+          "repeat": 2,
+          "fold": 0,
+          "weights": {
+            "dense": 0.9,
+            "bm25": 0.1,
+            "graph": 0.0
+          },
+          "train_score": 0.7527622323242049,
+          "test_score": 0.8390705490897379,
+          "n_test": 8
+        },
+        {
+          "repeat": 2,
+          "fold": 1,
+          "weights": {
+            "dense": 0.9,
+            "bm25": 0.1,
+            "graph": 0.0
+          },
+          "train_score": 0.7383461618946263,
+          "test_score": 0.8913288043969602,
+          "n_test": 8
+        },
+        {
+          "repeat": 2,
+          "fold": 2,
+          "weights": {
+            "dense": 1.0,
+            "bm25": 0.0,
+            "graph": 0.0
+          },
+          "train_score": 0.7909245326278577,
+          "test_score": 0.6591275016712245,
+          "n_test": 7
+        },
+        {
+          "repeat": 2,
+          "fold": 3,
+          "weights": {
+            "dense": 0.8,
+            "bm25": 0.1,
+            "graph": 0.1
+          },
+          "train_score": 0.7932108165128736,
+          "test_score": 0.6126726871734222,
+          "n_test": 7
+        },
+        {
+          "repeat": 2,
+          "fold": 4,
+          "weights": {
+            "dense": 0.9,
+            "bm25": 0.1,
+            "graph": 0.0
+          },
+          "train_score": 0.7891683268156187,
+          "test_score": 0.6953741893787546,
+          "n_test": 7
+        }
+      ],
+      "sensitivity": [
+        [
+          0.0,
+          0.7519394610915296
+        ],
+        [
+          0.1,
+          0.7291174556786613
+        ],
+        [
+          0.2,
+          0.6902786700419641
+        ],
+        [
+          0.3,
+          0.663413486543833
+        ],
+        [
+          0.4,
+          0.6526985646475494
+        ],
+        [
+          0.5,
+          0.6312520258957597
+        ],
+        [
+          0.6,
+          0.606061275283323
+        ]
+      ],
+      "in_sample_best": {
+        "weights": {
+          "dense": 0.9,
+          "bm25": 0.1,
+          "graph": 0.0
+        },
+        "score": 0.7714234900032391
+      },
+      "per_query": {
+        "lex-01": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-02": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-03": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.944847956559586,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.75,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-04": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.9879801444388844,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.9444444444444443,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-05": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-06": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-07": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-08": {
+          "MRR@5": 0.5,
+          "NDCG@5": 0.6204510387155954,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 0.5,
+          "Hit@1": 0.3333333333333333,
+          "Recall@10": 1.0
+        },
+        "lex-09": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.7967075809905065,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-10": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-11": {
+          "MRR@5": 0.25,
+          "NDCG@5": 0.4306765580733931,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 0.25,
+          "Hit@1": 0.0,
+          "Recall@10": 1.0
+        },
+        "lex-12": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.6,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-01": {
+          "MRR@5": 0.6666666666666666,
+          "NDCG@5": 0.7763297063431295,
+          "Recall@5": 1.0,
+          "P@5": 0.6,
+          "MAP@5": 0.6981481481481482,
+          "Hit@1": 0.3333333333333333,
+          "Recall@10": 1.0
+        },
+        "sem-02": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.5950427489208391,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.6999999999999998,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-03": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.6758840844016504,
+          "Recall@5": 1.0,
+          "P@5": 0.6,
+          "MAP@5": 0.8055555555555555,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-04": {
+          "MRR@5": 0.5555555555555555,
+          "NDCG@5": 0.6666666666666666,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 0.5555555555555555,
+          "Hit@1": 0.3333333333333333,
+          "Recall@10": 1.0
+        },
+        "sem-05": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-06": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.9327783893101107,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.6999999999999998,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-07": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-08": {
+          "MRR@5": 0.0,
+          "NDCG@5": 0.0,
+          "Recall@5": 0.0,
+          "P@5": 0.0,
+          "MAP@5": 0.0,
+          "Hit@1": 0.0,
+          "Recall@10": 0.5
+        },
+        "sem-09": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.8262346571285599,
+          "Recall@5": 0.5,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 0.5,
+          "Hit@1": 1.0,
+          "Recall@10": 0.6666666666666666
+        },
+        "sem-10": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-11": {
+          "MRR@5": 0.0,
+          "NDCG@5": 0.0,
+          "Recall@5": 0.0,
+          "P@5": 0.0,
+          "MAP@5": 0.0,
+          "Hit@1": 0.0,
+          "Recall@10": 0.0
+        },
+        "sem-12": {
+          "MRR@5": 0.5,
+          "NDCG@5": 0.562455901550729,
+          "Recall@5": 0.6666666666666666,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.3333333333333333,
+          "Hit@1": 0.0,
+          "Recall@10": 1.0
+        },
+        "sem-13": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.8578318835189042,
+          "Recall@5": 0.6666666666666666,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.5925925925925926,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-01": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.8456065063785471,
+          "Recall@5": 0.6666666666666666,
+          "P@5": 0.6666666666666666,
+          "MAP@5": 0.6,
+          "Hit@1": 1.0,
+          "Recall@10": 0.8000000000000002
+        },
+        "str-02": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.6885288809404666,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.8333333333333334,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-03": {
+          "MRR@5": 0.5,
+          "NDCG@5": 0.44116978467607054,
+          "Recall@5": 0.7777777777777777,
+          "P@5": 0.4666666666666666,
+          "MAP@5": 0.4185185185185185,
+          "Hit@1": 0.0,
+          "Recall@10": 1.0
+        },
+        "str-04": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.9759602888777689,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.8888888888888888,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-05": {
+          "MRR@5": 0.4166666666666667,
+          "NDCG@5": 0.4000545873049213,
+          "Recall@5": 0.3333333333333333,
+          "P@5": 0.3333333333333333,
+          "MAP@5": 0.15,
+          "Hit@1": 0.0,
+          "Recall@10": 0.4000000000000001
+        },
+        "str-06": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.9751957567060058,
+          "Recall@5": 1.0,
+          "P@5": 0.8000000000000002,
+          "MAP@5": 0.8874999999999998,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-07": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.7424693355471289,
+          "Recall@5": 0.5,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.3499999999999999,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-08": {
+          "MRR@5": 0.38888888888888884,
+          "NDCG@5": 0.48528191828264483,
+          "Recall@5": 0.5833333333333334,
+          "P@5": 0.4666666666666666,
+          "MAP@5": 0.28611111111111104,
+          "Hit@1": 0.0,
+          "Recall@10": 0.75
+        },
+        "str-09": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.6342951059914369,
+          "Recall@5": 0.5555555555555555,
+          "P@5": 0.3333333333333333,
+          "MAP@5": 0.5555555555555555,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-10": {
+          "MRR@5": 0.8333333333333334,
+          "NDCG@5": 0.3480732147228219,
+          "Recall@5": 0.6666666666666666,
+          "P@5": 0.26666666666666666,
+          "MAP@5": 0.48333333333333334,
+          "Hit@1": 0.6666666666666666,
+          "Recall@10": 1.0
+        },
+        "str-11": {
+          "MRR@5": 0.0,
+          "NDCG@5": 0.0,
+          "Recall@5": 0.0,
+          "P@5": 0.0,
+          "MAP@5": 0.0,
+          "Hit@1": 0.0,
+          "Recall@10": 0.6666666666666666
+        },
+        "str-12": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.7450286607850446,
+          "Recall@5": 0.7777777777777777,
+          "P@5": 0.4666666666666666,
+          "MAP@5": 0.7333333333333334,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        }
+      }
+    },
+    {
+      "name": "Full Tracex (+ Reranker) (CV-tuned)",
+      "base": "Full Tracex (+ Reranker)",
+      "settings": {
+        "folds": 5,
+        "repeats": 3,
+        "step": 0.1,
+        "objective": "NDCG@5",
+        "seed": 0
+      },
+      "metrics": {
+        "MRR@5": 0.8968468468468469,
+        "NDCG@5": 0.7838871597423642,
+        "Recall@5": 0.7746246246246247,
+        "P@5": 0.31711711711711715,
+        "MAP@5": 0.7059759759759761,
+        "Hit@1": 0.8558558558558558,
+        "Recall@10": 0.8732732732732734
+      },
+      "selections": [
+        {
+          "repeat": 0,
+          "fold": 0,
+          "weights": {
+            "dense": 0.7,
+            "bm25": 0.1,
+            "graph": 0.2
+          },
+          "train_score": 0.7796018480357125,
+          "test_score": 0.8743971584399639,
+          "n_test": 8
+        },
+        {
+          "repeat": 0,
+          "fold": 1,
+          "weights": {
+            "dense": 0.7,
+            "bm25": 0.1,
+            "graph": 0.2
+          },
+          "train_score": 0.8044832816064488,
+          "test_score": 0.7842019617460446,
+          "n_test": 8
+        },
+        {
+          "repeat": 0,
+          "fold": 2,
+          "weights": {
+            "dense": 0.6,
+            "bm25": 0.1,
+            "graph": 0.3
+          },
+          "train_score": 0.8156317530682745,
+          "test_score": 0.560146124454075,
+          "n_test": 7
+        },
+        {
+          "repeat": 0,
+          "fold": 3,
+          "weights": {
+            "dense": 0.7,
+            "bm25": 0.1,
+            "graph": 0.2
+          },
+          "train_score": 0.7861236185411663,
+          "test_score": 0.859988900617198,
+          "n_test": 7
+        },
+        {
+          "repeat": 0,
+          "fold": 4,
+          "weights": {
+            "dense": 0.7,
+            "bm25": 0.1,
+            "graph": 0.2
+          },
+          "train_score": 0.817014199727988,
+          "test_score": 0.7276006955308179,
+          "n_test": 7
+        },
+        {
+          "repeat": 1,
+          "fold": 0,
+          "weights": {
+            "dense": 0.7,
+            "bm25": 0.1,
+            "graph": 0.2
+          },
+          "train_score": 0.7879553284301319,
+          "test_score": 0.8441157920101929,
+          "n_test": 8
+        },
+        {
+          "repeat": 1,
+          "fold": 1,
+          "weights": {
+            "dense": 0.0,
+            "bm25": 0.7,
+            "graph": 0.3
+          },
+          "train_score": 0.8205602512433232,
+          "test_score": 0.7097701982039568,
+          "n_test": 8
+        },
+        {
+          "repeat": 1,
+          "fold": 2,
+          "weights": {
+            "dense": 0.7,
+            "bm25": 0.1,
+            "graph": 0.2
+          },
+          "train_score": 0.7984325251482421,
+          "test_score": 0.8072364437297292,
+          "n_test": 7
+        },
+        {
+          "repeat": 1,
+          "fold": 3,
+          "weights": {
+            "dense": 0.7,
+            "bm25": 0.1,
+            "graph": 0.2
+          },
+          "train_score": 0.7714164703256856,
+          "test_score": 0.9230195358264003,
+          "n_test": 7
+        },
+        {
+          "repeat": 1,
+          "fold": 4,
+          "weights": {
+            "dense": 0.9,
+            "bm25": 0.1,
+            "graph": 0.0
+          },
+          "train_score": 0.8267269737518376,
+          "test_score": 0.6859532161335947,
+          "n_test": 7
+        },
+        {
+          "repeat": 2,
+          "fold": 0,
+          "weights": {
+            "dense": 0.7,
+            "bm25": 0.1,
+            "graph": 0.2
+          },
+          "train_score": 0.8080969903379722,
+          "test_score": 0.7711022675942724,
+          "n_test": 8
+        },
+        {
+          "repeat": 2,
+          "fold": 1,
+          "weights": {
+            "dense": 0.7,
+            "bm25": 0.1,
+            "graph": 0.2
+          },
+          "train_score": 0.7913839976036571,
+          "test_score": 0.8316868662561645,
+          "n_test": 8
+        },
+        {
+          "repeat": 2,
+          "fold": 2,
+          "weights": {
+            "dense": 0.4,
+            "bm25": 0.2,
+            "graph": 0.4
+          },
+          "train_score": 0.8031174139035709,
+          "test_score": 0.7653556392250529,
+          "n_test": 7
+        },
+        {
+          "repeat": 2,
+          "fold": 3,
+          "weights": {
+            "dense": 0.7,
+            "bm25": 0.1,
+            "graph": 0.2
+          },
+          "train_score": 0.7884755827026886,
+          "test_score": 0.8499090542106733,
+          "n_test": 7
+        },
+        {
+          "repeat": 2,
+          "fold": 4,
+          "weights": {
+            "dense": 0.7,
+            "bm25": 0.1,
+            "graph": 0.2
+          },
+          "train_score": 0.8122939117083502,
+          "test_score": 0.7478305013292662,
+          "n_test": 7
+        }
+      ],
+      "sensitivity": [
+        [
+          0.0,
+          0.7959137529561059
+        ],
+        [
+          0.1,
+          0.7959137529561059
+        ],
+        [
+          0.2,
+          0.7959137529561059
+        ],
+        [
+          0.3,
+          0.7959137529561059
+        ],
+        [
+          0.4,
+          0.7997719268461052
+        ],
+        [
+          0.5,
+          0.7840655864922235
+        ],
+        [
+          0.6,
+          0.7864178150739547
+        ]
+      ],
+      "in_sample_best": {
+        "weights": {
+          "dense": 0.7,
+          "bm25": 0.1,
+          "graph": 0.2
+        },
+        "score": 0.8000981313663613
+      },
+      "per_query": {
+        "lex-01": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-02": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-03": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-04": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-05": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-06": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-07": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-08": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-09": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-10": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-11": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "lex-12": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.6,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-01": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.7579237460681981,
+          "Recall@5": 1.0,
+          "P@5": 0.6,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-02": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.27541155237618664,
+          "Recall@5": 0.5,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 0.5,
+          "Hit@1": 1.0,
+          "Recall@10": 0.5
+        },
+        "sem-03": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.9596539576780331,
+          "Recall@5": 0.8888888888888888,
+          "P@5": 0.5333333333333333,
+          "MAP@5": 0.8888888888888888,
+          "Hit@1": 1.0,
+          "Recall@10": 0.8888888888888888
+        },
+        "sem-04": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-05": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-06": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.8262346571285599,
+          "Recall@5": 0.5,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 0.5,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-07": {
+          "MRR@5": 1.0,
+          "NDCG@5": 1.0,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "sem-08": {
+          "MRR@5": 0.15,
+          "NDCG@5": 0.2251570316125769,
+          "Recall@5": 0.3333333333333333,
+          "P@5": 0.13333333333333333,
+          "MAP@5": 0.075,
+          "Hit@1": 0.0,
+          "Recall@10": 0.5
+        },
+        "sem-09": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.8262346571285599,
+          "Recall@5": 0.5,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 0.5,
+          "Hit@1": 1.0,
+          "Recall@10": 0.6666666666666666
+        },
+        "sem-10": {
+          "MRR@5": 0.5,
+          "NDCG@5": 0.6309297535714574,
+          "Recall@5": 1.0,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 0.5,
+          "Hit@1": 0.0,
+          "Recall@10": 1.0
+        },
+        "sem-11": {
+          "MRR@5": 0.6666666666666666,
+          "NDCG@5": 0.5508231047523733,
+          "Recall@5": 0.3333333333333333,
+          "P@5": 0.13333333333333333,
+          "MAP@5": 0.3333333333333333,
+          "Hit@1": 0.6666666666666666,
+          "Recall@10": 0.5
+        },
+        "sem-12": {
+          "MRR@5": 0.16666666666666666,
+          "NDCG@5": 0.06950437855643275,
+          "Recall@5": 0.2222222222222222,
+          "P@5": 0.13333333333333333,
+          "MAP@5": 0.05555555555555555,
+          "Hit@1": 0.0,
+          "Recall@10": 0.5555555555555555
+        },
+        "sem-13": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.878961873034099,
+          "Recall@5": 0.6666666666666666,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.6666666666666666,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-01": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.7854672967601969,
+          "Recall@5": 0.6,
+          "P@5": 0.6,
+          "MAP@5": 0.4533333333333333,
+          "Hit@1": 1.0,
+          "Recall@10": 0.8000000000000002
+        },
+        "str-02": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.7967075809905065,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 1.0,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-03": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.649014791936513,
+          "Recall@5": 0.6666666666666666,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.5555555555555555,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-04": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.9639404333166532,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.8333333333333334,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-05": {
+          "MRR@5": 0.20000000000000004,
+          "NDCG@5": 0.23452925321255158,
+          "Recall@5": 0.20000000000000004,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 0.04,
+          "Hit@1": 0.0,
+          "Recall@10": 0.4000000000000001
+        },
+        "str-06": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.6576630675781056,
+          "Recall@5": 0.25,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 0.25,
+          "Hit@1": 1.0,
+          "Recall@10": 0.5
+        },
+        "str-07": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.7424693355471289,
+          "Recall@5": 0.5,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.3499999999999999,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-08": {
+          "MRR@5": 0.5,
+          "NDCG@5": 0.49974546512912627,
+          "Recall@5": 0.5,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.225,
+          "Hit@1": 0.0,
+          "Recall@10": 0.6666666666666666
+        },
+        "str-09": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.46358199424036634,
+          "Recall@5": 0.6666666666666666,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.5555555555555555,
+          "Hit@1": 1.0,
+          "Recall@10": 0.6666666666666666
+        },
+        "str-10": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.5950427489208391,
+          "Recall@5": 1.0,
+          "P@5": 0.4000000000000001,
+          "MAP@5": 0.6999999999999998,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        },
+        "str-11": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.7262287617954056,
+          "Recall@5": 0.3333333333333333,
+          "P@5": 0.20000000000000004,
+          "MAP@5": 0.3333333333333333,
+          "Hit@1": 1.0,
+          "Recall@10": 0.6666666666666666
+        },
+        "str-12": {
+          "MRR@5": 1.0,
+          "NDCG@5": 0.8885994691336018,
+          "Recall@5": 1.0,
+          "P@5": 0.6,
+          "MAP@5": 0.8055555555555555,
+          "Hit@1": 1.0,
+          "Recall@10": 1.0
+        }
+      }
+    }
+  ],
+  "cv_significance": [
+    {
+      "system": "Dense + BM25 + Graph (CV-tuned)",
+      "metric": "MRR@5",
+      "delta": 0.011111111111111183,
+      "p_value": 0.8541145885411459,
+      "p_adjusted": 1.0,
+      "baseline": "BM25",
+      "significant": false
+    },
+    {
+      "system": "Dense + BM25 + Graph (CV-tuned)",
+      "metric": "NDCG@5",
+      "delta": 0.05852178731066415,
+      "p_value": 0.21447855214478553,
+      "p_adjusted": 1.0,
+      "baseline": "BM25",
+      "significant": false
+    },
+    {
+      "system": "Dense + BM25 + Graph (CV-tuned)",
+      "metric": "MRR@5",
+      "delta": 0.035885885885885926,
+      "p_value": 0.2576742325767423,
+      "p_adjusted": 1.0,
+      "baseline": "Dense + BM25 + Graph",
+      "significant": false
+    },
+    {
+      "system": "Dense + BM25 + Graph (CV-tuned)",
+      "metric": "NDCG@5",
+      "delta": 0.03824974500753364,
+      "p_value": 0.24027597240275972,
+      "p_adjusted": 1.0,
+      "baseline": "Dense + BM25 + Graph",
+      "significant": false
+    },
+    {
+      "system": "Full Tracex (+ Reranker) (CV-tuned)",
+      "metric": "MRR@5",
+      "delta": 0.10765765765765778,
+      "p_value": 0.0065993400659934,
+      "p_adjusted": 0.0461953804619538,
+      "baseline": "BM25",
+      "significant": true
+    },
+    {
+      "system": "Full Tracex (+ Reranker) (CV-tuned)",
+      "metric": "NDCG@5",
+      "delta": 0.11388053200353065,
+      "p_value": 0.00019998000199980003,
+      "p_adjusted": 0.0015998400159984002,
+      "baseline": "BM25",
+      "significant": true
+    },
+    {
+      "system": "Full Tracex (+ Reranker) (CV-tuned)",
+      "metric": "MRR@5",
+      "delta": -0.012612612612612484,
+      "p_value": 0.25437456254374563,
+      "p_adjusted": 1.0,
+      "baseline": "Full Tracex (+ Reranker)",
+      "significant": false
+    },
+    {
+      "system": "Full Tracex (+ Reranker) (CV-tuned)",
+      "metric": "NDCG@5",
+      "delta": -0.012026593213741665,
+      "p_value": 0.12428757124287572,
+      "p_adjusted": 0.7457254274572543,
+      "baseline": "Full Tracex (+ Reranker)",
+      "significant": false
+    }
+  ]
+}

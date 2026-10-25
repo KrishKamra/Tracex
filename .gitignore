@@ -25,3 +25,9 @@ Thumbs.db
 # Local env
 .env
 .env.*
+
+# Local reference material (kept on disk, not versioned)
+tracex-workspace.html
+tracex_master_specification_claude_code_prompt.md
+TRACEX_MASTER_SPEC.md
+*_prompt.md

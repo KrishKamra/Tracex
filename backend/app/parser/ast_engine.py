@@ -84,6 +84,10 @@ class ScopeDetails:
     raises: tuple[str, ...] = ()
     returns: tuple[str, ...] = ()
     return_type: str | None = None
+    # (binding, type hint) for assignments whose type is statically evident:
+    # an annotation, or the callee of a constructor/factory call, e.g.
+    # ("repo", "PaymentRepository"), ("self.audit", "AuditLog").
+    type_hints: tuple[tuple[str, str], ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -93,6 +97,14 @@ class ImportRef:
     module: str
     name: str | None
     alias: str | None
+    line: int
+
+
+@dataclass(frozen=True, slots=True)
+class CallSite:
+    """One call expression inside a chunk: normalized callee and its 1-indexed line."""
+
+    callee: str
     line: int
 
 
@@ -120,6 +132,7 @@ class SymbolNode:
     imports: tuple[ImportRef, ...]
     calls: tuple[str, ...]
     ast_scope_details: ScopeDetails
+    call_sites: tuple[CallSite, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -322,6 +335,22 @@ class _Extractor:
             return f"{fn}()" if fn else ""
         return ""
 
+    def type_hint(self, value: Node | None, annotation: Node | None) -> str | None:
+        """Static type evidence for an assignment: annotation text, else the callee it was built from."""
+        if annotation is not None:
+            return self.text(annotation).lstrip(":").strip() or None
+        while value is not None and value.type in {"await", "await_expression", "parenthesized_expression"}:
+            value = value.named_children[0] if value.named_child_count else None
+        if value is None:
+            return None
+        if value.type in self.callee_call_types:
+            fn = value.child_by_field_name("function")
+        elif value.type == "new_expression":
+            fn = value.child_by_field_name("constructor")
+        else:
+            return None
+        return self.callee_name(fn) or None
+
     def make_id(self, qualified_name: str, start_line: int) -> str:
         symbol_id = f"{self.file_path}::{qualified_name}"
         if symbol_id in self._seen_ids:
@@ -342,7 +371,7 @@ class _Extractor:
         docstring: str,
         body: str,
         bases: tuple[str, ...],
-        calls: tuple[str, ...],
+        call_sites: tuple[CallSite, ...],
         details: ScopeDetails,
     ) -> SymbolNode:
         name = self.symbol_name(node)
@@ -373,8 +402,9 @@ class _Extractor:
             enclosing_class=enclosing_class,
             bases=bases,
             imports=imports,
-            calls=calls,
+            calls=_dedupe([site.callee for site in call_sites]),
             ast_scope_details=details,
+            call_sites=call_sites,
         )
 
 
@@ -474,7 +504,7 @@ class _PythonExtractor(_Extractor):
             if is_class
             else self._body_text(body, docstring_stmt),
             bases=bases,
-            calls=self._calls(body),
+            call_sites=self._call_sites(body),
             details=details,
         )
 
@@ -559,14 +589,14 @@ class _PythonExtractor(_Extractor):
                 )
         return tuple(result)
 
-    def _calls(self, body: Node | None) -> tuple[str, ...]:
-        calls = []
+    def _call_sites(self, body: Node | None) -> tuple[CallSite, ...]:
+        sites = []
         for node, _ in self.walk_scope(body):
             if node.type == "call":
                 name = self.callee_name(node.child_by_field_name("function"))
                 if name:
-                    calls.append(name)
-        return _dedupe(calls)
+                    sites.append(CallSite(name, node.start_point[0] + 1))
+        return tuple(sites)
 
     def _target_names(self, node: Node | None) -> list[str]:
         if node is None:
@@ -583,11 +613,21 @@ class _PythonExtractor(_Extractor):
         local_names: list[str] = []
         raises: list[str] = []
         returns: list[str] = []
+        type_hints: list[tuple[str, str]] = []
         for node, nested in self.walk_scope(body):
             if nested:
                 continue
             if node.type in {"assignment", "augmented_assignment", "for_statement"}:
-                local_names += self._target_names(node.child_by_field_name("left"))
+                left = node.child_by_field_name("left")
+                local_names += self._target_names(left)
+                if (
+                    node.type == "assignment"
+                    and left is not None
+                    and left.type in {"identifier", "attribute"}
+                ):
+                    hint = self.type_hint(node.child_by_field_name("right"), node.child_by_field_name("type"))
+                    if hint:
+                        type_hints.append(("".join(self.text(left).split()), hint))
             elif node.type == "named_expression":
                 local_names += self._target_names(node.child_by_field_name("name"))
             elif node.type == "as_pattern":
@@ -607,6 +647,7 @@ class _PythonExtractor(_Extractor):
             raises=_dedupe(raises),
             returns=_dedupe(returns),
             return_type=return_type,
+            type_hints=tuple(dict.fromkeys(type_hints)),
         )
 
 
@@ -768,7 +809,7 @@ class _TypeScriptExtractor(_Extractor):
             docstring=self._jsdoc(span_start),
             body=self._class_skeleton(body) if is_class else self._body_text(body),
             bases=tuple(bases),
-            calls=self._calls(body),
+            call_sites=self._call_sites(body),
             details=self._scope_details(
                 node,
                 body,
@@ -815,8 +856,8 @@ class _TypeScriptExtractor(_Extractor):
             )
         return tuple(result)
 
-    def _calls(self, body: Node | None) -> tuple[str, ...]:
-        calls = []
+    def _call_sites(self, body: Node | None) -> tuple[CallSite, ...]:
+        sites = []
         for node, _ in self.walk_scope(body):
             if node.type == "call_expression":
                 fn = node.child_by_field_name("function")
@@ -826,8 +867,8 @@ class _TypeScriptExtractor(_Extractor):
                 continue
             name = self.callee_name(fn)
             if name:
-                calls.append(name)
-        return _dedupe(calls)
+                sites.append(CallSite(name, node.start_point[0] + 1))
+        return tuple(sites)
 
     def _pattern_names(self, node: Node | None) -> list[str]:
         if node is None:
@@ -848,18 +889,32 @@ class _TypeScriptExtractor(_Extractor):
         local_names: list[str] = []
         raises: list[str] = []
         returns: list[str] = []
+        type_hints: list[tuple[str, str]] = []
         if body is not None and body.type not in {"statement_block", "class_body"}:
             returns.append(_collapse(self.text(body))[:_RETURN_EXPR_MAX_CHARS])
         for child, nested in self.walk_scope(body):
             if nested:
                 continue
             if child.type == "variable_declarator":
-                local_names += self._pattern_names(child.child_by_field_name("name"))
+                name = child.child_by_field_name("name")
+                local_names += self._pattern_names(name)
+                hint = self.type_hint(child.child_by_field_name("value"), child.child_by_field_name("type"))
+                if hint and name is not None and name.type == "identifier":
+                    type_hints.append((self.text(name), hint))
+            elif child.type == "assignment_expression":
+                left = child.child_by_field_name("left")
+                hint = self.type_hint(child.child_by_field_name("right"), None)
+                if hint and left is not None and left.type in {"identifier", "member_expression"}:
+                    type_hints.append(("".join(self.text(left).split()), hint))
             elif child.type == "public_field_definition" and node.type in _TS_CLASSES:
                 value = child.child_by_field_name("value")
                 if value is not None and self.is_target(value):
                     continue
-                local_names.append(self.text(child.child_by_field_name("name")))
+                field_name = self.text(child.child_by_field_name("name"))
+                local_names.append(field_name)
+                hint = self.type_hint(value, child.child_by_field_name("type"))
+                if hint:
+                    type_hints.append((f"this.{field_name}", hint))
             elif child.type == "throw_statement" and child.named_child_count:
                 exc = child.named_children[0]
                 target = exc.child_by_field_name("constructor") if exc.type == "new_expression" else exc
@@ -872,4 +927,5 @@ class _TypeScriptExtractor(_Extractor):
             raises=_dedupe(raises),
             returns=_dedupe(returns),
             return_type=return_type,
+            type_hints=tuple(dict.fromkeys(type_hints)),
         )

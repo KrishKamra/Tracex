@@ -11,10 +11,14 @@ dependencies = [
     "numpy>=1.26",
     "sentence-transformers>=3.0",
     "transformers>=4.44,<5",
+    "networkx>=3.7",
+    "fastapi>=0.162.0",
+    "uvicorn[standard]>=0.54.0",
 ]
 
 [dependency-groups]
 dev = [
+    "httpx>=0.28.1",
     "pytest>=8.0",
     "ruff>=0.17.2",
 ]
@@ -33,7 +37,7 @@ markers = ["slow: downloads and runs a real embedding model (opt-in via TRACEX_R
 [tool.ruff]
 line-length = 110
 target-version = "py312"
-extend-exclude = ["tests/fixtures"]
+extend-exclude = ["tests/fixtures", "eval/corpora"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP", "SIM"]
