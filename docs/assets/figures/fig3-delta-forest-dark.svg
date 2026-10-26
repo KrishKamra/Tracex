@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="685.401573pt" height="288.959414pt" viewBox="0 0 685.401573 288.959414" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>tracex docs</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 288.959414 
+L 685.401573 288.959414 
+L 685.401573 0 
+L 0 0 
+z
+" style="fill: #0d121d"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 98.64 228.237422 
+L 299.957647 228.237422 
+L 299.957647 34.197422 
+L 98.64 34.197422 
+z
+" style="fill: #0d121d"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 125.129164 228.237422 
+L 125.129164 34.197422 
+" clip-path="url(#pa41c7fd7aa)" style="fill: none; stroke: #1e293b; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: middle; fill: #94a3b8" x="125.129164" y="239.335078" transform="rotate(-0 125.129164 239.335078)">−0.2</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 178.107492 228.237422 
+L 178.107492 34.197422 
+" clip-path="url(#pa41c7fd7aa)" style="fill: none; stroke: #1e293b; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: middle; fill: #94a3b8" x="178.107492" y="239.335078" transform="rotate(-0 178.107492 239.335078)">0.0</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 231.08582 228.237422 
+L 231.08582 34.197422 
+" clip-path="url(#pa41c7fd7aa)" style="fill: none; stroke: #1e293b; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: middle; fill: #94a3b8" x="231.08582" y="239.335078" transform="rotate(-0 231.08582 239.335078)">0.2</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 284.064149 228.237422 
+L 284.064149 34.197422 
+" clip-path="url(#pa41c7fd7aa)" style="fill: none; stroke: #1e293b; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: middle; fill: #94a3b8" x="284.064149" y="239.335078" transform="rotate(-0 284.064149 239.335078)">0.4</text>
+     </g>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: middle; fill: #94a3b8" x="199.298824" y="253.335859" transform="rotate(-0 199.298824 253.335859)">Paired difference (95% bootstrap CI)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_9"/>
+     <g id="text_6">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: end; fill: #94a3b8" x="95.14" y="209.64741" transform="rotate(-0 95.14 209.64741)">Full (CV-tuned)</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_10"/>
+     <g id="text_7">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: end; fill: #94a3b8" x="95.14" y="172.332025" transform="rotate(-0 95.14 172.332025)">Full (default w)</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11"/>
+     <g id="text_8">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: end; fill: #94a3b8" x="95.14" y="135.016641" transform="rotate(-0 95.14 135.016641)">+ Graph</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_12"/>
+     <g id="text_9">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: end; fill: #94a3b8" x="95.14" y="97.700865" transform="rotate(-0 95.14 97.700865)">Dense + BM25</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_13"/>
+     <g id="text_10">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: end; fill: #94a3b8" x="95.14" y="60.385481" transform="rotate(-0 95.14 60.385481)">Dense</text>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_14">
+    <path d="M 178.107492 228.237422 
+L 178.107492 34.197422 
+" clip-path="url(#pa41c7fd7aa)" style="fill: none; stroke: #334155; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 180.358247 56.586653 
+L 226.24041 56.586653 
+" clip-path="url(#pa41c7fd7aa)" style="fill: none; stroke: #d95926; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 184.45233 93.902037 
+L 214.876495 93.902037 
+" clip-path="url(#pa41c7fd7aa)" style="fill: none; stroke: #199e70; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 151.187059 131.217422 
+L 212.473771 131.217422 
+" clip-path="url(#pa41c7fd7aa)" style="fill: none; stroke: #c98500; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_18">
+    <path d="M 195.45582 168.532806 
+L 229.903551 168.532806 
+" clip-path="url(#pa41c7fd7aa)" style="fill: none; stroke: #d55181; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_19">
+    <path d="M 192.148609 205.848191 
+L 226.897554 205.848191 
+" clip-path="url(#pa41c7fd7aa)" style="fill: none; stroke: #008300; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="ma972f7fc31" d="M 0 4 
+C 1.060812 4 2.078319 3.578535 2.828427 2.828427 
+C 3.578535 2.078319 4 1.060812 4 0 
+C 4 -1.060812 3.578535 -2.078319 2.828427 -2.828427 
+C 2.078319 -3.578535 1.060812 -4 0 -4 
+C -1.060812 -4 -2.078319 -3.578535 -2.828427 -2.828427 
+C -3.578535 -2.078319 -4 -1.060812 -4 0 
+C -4 1.060812 -3.578535 2.078319 -2.828427 2.828427 
+C -2.078319 3.578535 -1.060812 4 0 4 
+z
+" style="stroke: #d95926; stroke-width: 2"/>
+    </defs>
+    <g clip-path="url(#pa41c7fd7aa)">
+     <use xlink:href="#ma972f7fc31" x="203.532674" y="56.586653" style="fill: #0d121d; stroke: #d95926; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8.5px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #64748b" x="302.606563" y="58.794992" transform="rotate(-0 302.606563 58.794992)">p_adj 0.168</text>
+   </g>
+   <g id="PathCollection_2">
+    <defs>
+     <path id="mf4c7b063e3" d="M 0 4 
+C 1.060812 4 2.078319 3.578535 2.828427 2.828427 
+C 3.578535 2.078319 4 1.060812 4 0 
+C 4 -1.060812 3.578535 -2.078319 2.828427 -2.828427 
+C 2.078319 -3.578535 1.060812 -4 0 -4 
+C -1.060812 -4 -2.078319 -3.578535 -2.828427 -2.828427 
+C -3.578535 -2.078319 -4 -1.060812 -4 0 
+C -4 1.060812 -3.578535 2.078319 -2.828427 2.828427 
+C -2.078319 3.578535 -1.060812 4 0 4 
+z
+" style="stroke: #199e70; stroke-width: 2"/>
+    </defs>
+    <g clip-path="url(#pa41c7fd7aa)">
+     <use xlink:href="#mf4c7b063e3" x="198.778179" y="93.902037" style="fill: #0d121d; stroke: #199e70; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8.5px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #64748b" x="302.606563" y="96.110377" transform="rotate(-0 302.606563 96.110377)">p_adj 0.067</text>
+   </g>
+   <g id="PathCollection_3">
+    <defs>
+     <path id="m787b0f68d9" d="M 0 4 
+C 1.060812 4 2.078319 3.578535 2.828427 2.828427 
+C 3.578535 2.078319 4 1.060812 4 0 
+C 4 -1.060812 3.578535 -2.078319 2.828427 -2.828427 
+C 2.078319 -3.578535 1.060812 -4 0 -4 
+C -1.060812 -4 -2.078319 -3.578535 -2.828427 -2.828427 
+C -3.578535 -2.078319 -4 -1.060812 -4 0 
+C -4 1.060812 -3.578535 2.078319 -2.828427 2.828427 
+C -2.078319 3.578535 -1.060812 4 0 4 
+z
+" style="stroke: #c98500; stroke-width: 2"/>
+    </defs>
+    <g clip-path="url(#pa41c7fd7aa)">
+     <use xlink:href="#m787b0f68d9" x="183.477387" y="131.217422" style="fill: #0d121d; stroke: #c98500; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8.5px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #64748b" x="302.606563" y="133.425762" transform="rotate(-0 302.606563 133.425762)">p_adj 1.000</text>
+   </g>
+   <g id="PathCollection_4">
+    <defs>
+     <path id="m57da4f5705" d="M 0 4 
+C 1.060812 4 2.078319 3.578535 2.828427 2.828427 
+C 3.578535 2.078319 4 1.060812 4 0 
+C 4 -1.060812 3.578535 -2.078319 2.828427 -2.828427 
+C 2.078319 -3.578535 1.060812 -4 0 -4 
+C -1.060812 -4 -2.078319 -3.578535 -2.828427 -2.828427 
+C -3.578535 -2.078319 -4 -1.060812 -4 0 
+C -4 1.060812 -3.578535 2.078319 -2.828427 2.828427 
+C -2.078319 3.578535 -1.060812 4 0 4 
+z
+" style="stroke: #d55181; stroke-width: 2"/>
+    </defs>
+    <g clip-path="url(#pa41c7fd7aa)">
+     <use xlink:href="#m57da4f5705" x="211.459237" y="168.532806" style="fill: #d55181; stroke: #d55181; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 600; font-size: 8.5px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #e2e8f0" x="302.606563" y="170.741146" transform="rotate(-0 302.606563 170.741146)">p_adj &lt;0.001</text>
+   </g>
+   <g id="PathCollection_5">
+    <defs>
+     <path id="m4c5cde498f" d="M 0 4 
+C 1.060812 4 2.078319 3.578535 2.828427 2.828427 
+C 3.578535 2.078319 4 1.060812 4 0 
+C 4 -1.060812 3.578535 -2.078319 2.828427 -2.828427 
+C 2.078319 -3.578535 1.060812 -4 0 -4 
+C -1.060812 -4 -2.078319 -3.578535 -2.828427 -2.828427 
+C -3.578535 -2.078319 -4 -1.060812 -4 0 
+C -4 1.060812 -3.578535 2.078319 -2.828427 2.828427 
+C -2.078319 3.578535 -1.060812 4 0 4 
+z
+" style="stroke: #008300; stroke-width: 2"/>
+    </defs>
+    <g clip-path="url(#pa41c7fd7aa)">
+     <use xlink:href="#m4c5cde498f" x="208.273493" y="205.848191" style="fill: #008300; stroke: #008300; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 600; font-size: 8.5px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #e2e8f0" x="302.606563" y="208.056531" transform="rotate(-0 302.606563 208.056531)">p_adj 0.002</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 600; font-size: 11px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #e2e8f0" x="98.64" y="24.197422" transform="rotate(-0 98.64 24.197422)">Δ NDCG@5 vs BM25</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_3">
+    <path d="M 410.682353 228.237422 
+L 612 228.237422 
+L 612 34.197422 
+L 410.682353 34.197422 
+z
+" style="fill: #0d121d"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_5">
+     <g id="line2d_20">
+      <path d="M 437.171517 228.237422 
+L 437.171517 34.197422 
+" clip-path="url(#p3646955038)" style="fill: none; stroke: #1e293b; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_21"/>
+     <g id="text_17">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: middle; fill: #94a3b8" x="437.171517" y="239.335078" transform="rotate(-0 437.171517 239.335078)">−0.2</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_22">
+      <path d="M 490.149845 228.237422 
+L 490.149845 34.197422 
+" clip-path="url(#p3646955038)" style="fill: none; stroke: #1e293b; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_23"/>
+     <g id="text_18">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: middle; fill: #94a3b8" x="490.149845" y="239.335078" transform="rotate(-0 490.149845 239.335078)">0.0</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_24">
+      <path d="M 543.128173 228.237422 
+L 543.128173 34.197422 
+" clip-path="url(#p3646955038)" style="fill: none; stroke: #1e293b; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_25"/>
+     <g id="text_19">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: middle; fill: #94a3b8" x="543.128173" y="239.335078" transform="rotate(-0 543.128173 239.335078)">0.2</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_26">
+      <path d="M 596.106502 228.237422 
+L 596.106502 34.197422 
+" clip-path="url(#p3646955038)" style="fill: none; stroke: #1e293b; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_27"/>
+     <g id="text_20">
+      <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: middle; fill: #94a3b8" x="596.106502" y="239.335078" transform="rotate(-0 596.106502 239.335078)">0.4</text>
+     </g>
+    </g>
+    <g id="text_21">
+     <text style="font-size: 10px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: middle; fill: #94a3b8" x="511.341176" y="253.335859" transform="rotate(-0 511.341176 253.335859)">Paired difference (95% bootstrap CI)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_6">
+     <g id="line2d_28"/>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_29"/>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_30"/>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_31"/>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_32"/>
+    </g>
+   </g>
+   <g id="line2d_33">
+    <path d="M 490.149845 228.237422 
+L 490.149845 34.197422 
+" clip-path="url(#p3646955038)" style="fill: none; stroke: #334155; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_34">
+    <path d="M 475.831378 56.586653 
+L 534.298452 56.586653 
+" clip-path="url(#p3646955038)" style="fill: none; stroke: #d95926; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_35">
+    <path d="M 490.746448 93.902037 
+L 531.196117 93.902037 
+" clip-path="url(#p3646955038)" style="fill: none; stroke: #199e70; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_36">
+    <path d="M 448.146025 131.217422 
+L 516.996971 131.217422 
+" clip-path="url(#p3646955038)" style="fill: none; stroke: #c98500; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_37">
+    <path d="M 503.752389 168.532806 
+L 542.889532 168.532806 
+" clip-path="url(#p3646955038)" style="fill: none; stroke: #d55181; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_38">
+    <path d="M 499.69549 205.848191 
+L 540.386784 205.848191 
+" clip-path="url(#p3646955038)" style="fill: none; stroke: #008300; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="PathCollection_6">
+    <g clip-path="url(#p3646955038)">
+     <use xlink:href="#ma972f7fc31" x="505.064915" y="56.586653" style="fill: #0d121d; stroke: #d95926; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8.5px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #64748b" x="614.648916" y="58.794992" transform="rotate(-0 614.648916 58.794992)">p_adj 1.000</text>
+   </g>
+   <g id="PathCollection_7">
+    <g clip-path="url(#p3646955038)">
+     <use xlink:href="#mf4c7b063e3" x="510.076379" y="93.902037" style="fill: #0d121d; stroke: #199e70; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 8.5px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #64748b" x="614.648916" y="96.110377" transform="rotate(-0 614.648916 96.110377)">p_adj 0.277</text>
+   </g>
+   <g id="PathCollection_8">
+    <g clip-path="url(#p3646955038)">
+     <use xlink:href="#m787b0f68d9" x="483.587214" y="131.217422" style="fill: #0d121d; stroke: #c98500; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8.5px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #64748b" x="614.648916" y="133.425762" transform="rotate(-0 614.648916 133.425762)">p_adj 1.000</text>
+   </g>
+   <g id="PathCollection_9">
+    <g clip-path="url(#p3646955038)">
+     <use xlink:href="#m57da4f5705" x="522.008434" y="168.532806" style="fill: #d55181; stroke: #d55181; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 600; font-size: 8.5px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #e2e8f0" x="614.648916" y="170.741146" transform="rotate(-0 614.648916 170.741146)">p_adj 0.008</text>
+   </g>
+   <g id="PathCollection_10">
+    <g clip-path="url(#p3646955038)">
+     <use xlink:href="#m4c5cde498f" x="518.667459" y="205.848191" style="fill: #008300; stroke: #008300; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 600; font-size: 8.5px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #e2e8f0" x="614.648916" y="208.056531" transform="rotate(-0 614.648916 208.056531)">p_adj 0.046</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 600; font-size: 11px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #e2e8f0" x="410.682353" y="24.197422" transform="rotate(-0 410.682353 24.197422)">Δ MRR@5 vs BM25</text>
+   </g>
+  </g>
+  <g id="text_28">
+   <text style="font-size: 8.5px; font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif; text-anchor: start; fill: #94a3b8" x="15.84" y="271.077422" transform="rotate(-0 15.84 271.077422)">●  filled = significant after Holm–Bonferroni (p_adj &lt; 0.05)      ○  hollow = not significant</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa41c7fd7aa">
+   <rect x="98.64" y="34.197422" width="201.317647" height="194.04"/>
+  </clipPath>
+  <clipPath id="p3646955038">
+   <rect x="410.682353" y="34.197422" width="201.317647" height="194.04"/>
+  </clipPath>
+ </defs>
+</svg>

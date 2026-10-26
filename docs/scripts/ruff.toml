@@ -1,0 +1,9 @@
+# Same rules as the backend, but the SVG builders emit markup templates whose
+# attribute lists read better on one line than split mid-attribute.
+extend = "../../backend/pyproject.toml"
+
+[lint.per-file-ignores]
+"build_*_svg.py" = ["E501"]
+
+[lint.isort]
+known-first-party = ["app"]

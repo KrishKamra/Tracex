@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="430" viewBox="0 0 1140 430" role="img" aria-label="Tracex design tokens: surfaces, accents and syntax colours for dark and light themes">
+<rect x="0" y="0" width="560" height="430" rx="16" fill="#0D121D" stroke="#1E293B"/>
+<text x="28" y="40" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="600" fill="#E2E8F0">Dark theme</text>
+<text x="28" y="72" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" letter-spacing="1" fill="#64748B">SURFACES &amp; INK</text>
+<rect x="28" y="82" width="56" height="56" rx="8" fill="#0B0F17" stroke="#1E293B"/>
+<text x="28" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#E2E8F0">bg</text>
+<text x="28" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#0B0F17</text>
+<rect x="102" y="82" width="56" height="56" rx="8" fill="#0D121D" stroke="#1E293B"/>
+<text x="102" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#E2E8F0">panel</text>
+<text x="102" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#0D121D</text>
+<rect x="176" y="82" width="56" height="56" rx="8" fill="#131B2E" stroke="#1E293B"/>
+<text x="176" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#E2E8F0">card</text>
+<text x="176" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#131B2E</text>
+<rect x="250" y="82" width="56" height="56" rx="8" fill="#1E293B" stroke="#1E293B"/>
+<text x="250" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#E2E8F0">line</text>
+<text x="250" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#1E293B</text>
+<rect x="324" y="82" width="56" height="56" rx="8" fill="#E2E8F0" stroke="#1E293B"/>
+<text x="324" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#E2E8F0">ink</text>
+<text x="324" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#E2E8F0</text>
+<rect x="398" y="82" width="56" height="56" rx="8" fill="#94A3B8" stroke="#1E293B"/>
+<text x="398" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#E2E8F0">sub</text>
+<text x="398" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#94A3B8</text>
+<rect x="472" y="82" width="56" height="56" rx="8" fill="#64748B" stroke="#1E293B"/>
+<text x="472" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#E2E8F0">muted</text>
+<text x="472" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#64748B</text>
+<text x="28" y="192" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" letter-spacing="1" fill="#64748B">ACCENTS</text>
+<rect x="28" y="202" width="56" height="56" rx="8" fill="#10B981" stroke="#1E293B"/>
+<text x="28" y="274" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#E2E8F0">mint · focus</text>
+<text x="28" y="288" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#10B981</text>
+<rect x="196" y="202" width="56" height="56" rx="8" fill="#38BDF8" stroke="#1E293B"/>
+<text x="196" y="274" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#E2E8F0">trace · call site</text>
+<text x="196" y="288" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#38BDF8</text>
+<rect x="364" y="202" width="56" height="56" rx="8" fill="#A78BFA" stroke="#1E293B"/>
+<text x="364" y="274" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#E2E8F0">violet · graph</text>
+<text x="364" y="288" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#A78BFA</text>
+<text x="28" y="312" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" letter-spacing="1" fill="#64748B">SYNTAX TOKENS (tk-*)</text>
+<circle cx="35" cy="339" r="6" fill="#C4A7FF"/>
+<text x="48" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#C4A7FF">kw</text>
+<text x="48" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#C4A7FF</text>
+<circle cx="119" cy="339" r="6" fill="#34D399"/>
+<text x="132" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#34D399">def</text>
+<text x="132" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#34D399</text>
+<circle cx="203" cy="339" r="6" fill="#8ECBF0"/>
+<text x="216" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#8ECBF0">fn</text>
+<text x="216" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#8ECBF0</text>
+<circle cx="287" cy="339" r="6" fill="#F0C674"/>
+<text x="300" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#F0C674">type</text>
+<text x="300" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#F0C674</text>
+<circle cx="371" cy="339" r="6" fill="#E9D8A6"/>
+<text x="384" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#E9D8A6">str</text>
+<text x="384" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#E9D8A6</text>
+<circle cx="455" cy="339" r="6" fill="#F4A261"/>
+<text x="468" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#F4A261">num</text>
+<text x="468" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#F4A261</text>
+<circle cx="35" cy="381" r="6" fill="#F0A6C8"/>
+<text x="48" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#F0A6C8">self</text>
+<text x="48" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#F0A6C8</text>
+<circle cx="119" cy="381" r="6" fill="#67D4E8"/>
+<text x="132" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#67D4E8">deco</text>
+<text x="132" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#67D4E8</text>
+<circle cx="203" cy="381" r="6" fill="#6FD3C6"/>
+<text x="216" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#6FD3C6">bi</text>
+<text x="216" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#6FD3C6</text>
+<circle cx="287" cy="381" r="6" fill="#718096"/>
+<text x="300" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#718096">com</text>
+<text x="300" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#718096</text>
+<circle cx="371" cy="381" r="6" fill="#8A97AB"/>
+<text x="384" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#8A97AB">p</text>
+<text x="384" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#8A97AB</text>
+<circle cx="455" cy="381" r="6" fill="#D6DDE8"/>
+<text x="468" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#D6DDE8">default</text>
+<text x="468" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#D6DDE8</text>
+<rect x="580" y="0" width="560" height="430" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+<text x="608" y="40" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="600" fill="#0F172A">Light theme</text>
+<text x="608" y="72" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" letter-spacing="1" fill="#64748B">SURFACES &amp; INK</text>
+<rect x="608" y="82" width="56" height="56" rx="8" fill="#F7F8FA" stroke="#E2E8F0"/>
+<text x="608" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#0F172A">bg</text>
+<text x="608" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#F7F8FA</text>
+<rect x="682" y="82" width="56" height="56" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+<text x="682" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#0F172A">panel</text>
+<text x="682" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#FFFFFF</text>
+<rect x="756" y="82" width="56" height="56" rx="8" fill="#F1F5F9" stroke="#E2E8F0"/>
+<text x="756" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#0F172A">card</text>
+<text x="756" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#F1F5F9</text>
+<rect x="830" y="82" width="56" height="56" rx="8" fill="#E2E8F0" stroke="#E2E8F0"/>
+<text x="830" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#0F172A">line</text>
+<text x="830" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#E2E8F0</text>
+<rect x="904" y="82" width="56" height="56" rx="8" fill="#0F172A" stroke="#E2E8F0"/>
+<text x="904" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#0F172A">ink</text>
+<text x="904" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#0F172A</text>
+<rect x="978" y="82" width="56" height="56" rx="8" fill="#475569" stroke="#E2E8F0"/>
+<text x="978" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#0F172A">sub</text>
+<text x="978" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#475569</text>
+<rect x="1052" y="82" width="56" height="56" rx="8" fill="#64748B" stroke="#E2E8F0"/>
+<text x="1052" y="154" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#0F172A">muted</text>
+<text x="1052" y="168" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#64748B</text>
+<text x="608" y="192" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" letter-spacing="1" fill="#64748B">ACCENTS</text>
+<rect x="608" y="202" width="56" height="56" rx="8" fill="#059669" stroke="#E2E8F0"/>
+<text x="608" y="274" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#0F172A">mint · focus</text>
+<text x="608" y="288" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#059669</text>
+<rect x="776" y="202" width="56" height="56" rx="8" fill="#0284C7" stroke="#E2E8F0"/>
+<text x="776" y="274" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#0F172A">trace · call site</text>
+<text x="776" y="288" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#0284C7</text>
+<rect x="944" y="202" width="56" height="56" rx="8" fill="#7C3AED" stroke="#E2E8F0"/>
+<text x="944" y="274" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#0F172A">violet · graph</text>
+<text x="944" y="288" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" fill="#64748B">#7C3AED</text>
+<text x="608" y="312" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="10.5" letter-spacing="1" fill="#64748B">SYNTAX TOKENS (tk-*)</text>
+<circle cx="615" cy="339" r="6" fill="#7C3AED"/>
+<text x="628" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#7C3AED">kw</text>
+<text x="628" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#7C3AED</text>
+<circle cx="699" cy="339" r="6" fill="#047857"/>
+<text x="712" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#047857">def</text>
+<text x="712" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#047857</text>
+<circle cx="783" cy="339" r="6" fill="#0369A1"/>
+<text x="796" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#0369A1">fn</text>
+<text x="796" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#0369A1</text>
+<circle cx="867" cy="339" r="6" fill="#B45309"/>
+<text x="880" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#B45309">type</text>
+<text x="880" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#B45309</text>
+<circle cx="951" cy="339" r="6" fill="#A16207"/>
+<text x="964" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#A16207">str</text>
+<text x="964" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#A16207</text>
+<circle cx="1035" cy="339" r="6" fill="#C2410C"/>
+<text x="1048" y="343" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#C2410C">num</text>
+<text x="1048" y="357" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#C2410C</text>
+<circle cx="615" cy="381" r="6" fill="#BE185D"/>
+<text x="628" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#BE185D">self</text>
+<text x="628" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#BE185D</text>
+<circle cx="699" cy="381" r="6" fill="#0E7490"/>
+<text x="712" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#0E7490">deco</text>
+<text x="712" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#0E7490</text>
+<circle cx="783" cy="381" r="6" fill="#0F766E"/>
+<text x="796" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#0F766E">bi</text>
+<text x="796" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#0F766E</text>
+<circle cx="867" cy="381" r="6" fill="#64748B"/>
+<text x="880" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#64748B">com</text>
+<text x="880" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#64748B</text>
+<circle cx="951" cy="381" r="6" fill="#64748B"/>
+<text x="964" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#64748B">p</text>
+<text x="964" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#64748B</text>
+<circle cx="1035" cy="381" r="6" fill="#1E293B"/>
+<text x="1048" y="385" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#1E293B">default</text>
+<text x="1048" y="399" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#64748B">#1E293B</text>
+</svg>

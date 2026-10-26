@@ -1,0 +1,7 @@
+# Default owners for everything in the repository.
+*                       @KrishKamra @jashkankariya
+
+# Retrieval quality and evaluation: changes here move the reported numbers.
+/backend/app/retrieval/ @KrishKamra @jashkankariya
+/backend/app/evaluation/ @KrishKamra @jashkankariya
+/backend/eval/          @KrishKamra @jashkankariya

@@ -1,0 +1,22 @@
+name: Documentation
+description: Something in the docs is wrong, unclear or missing
+title: "docs: "
+labels: ["documentation"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or section
+      placeholder: "docs/benchmarks.md#4-significance"
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What's wrong or missing?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested fix

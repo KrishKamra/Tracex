@@ -1,0 +1,66 @@
+name: Retrieval quality
+description: A search returned the wrong code, or missed the right code
+title: "retrieval: "
+labels: ["retrieval-quality", "evaluation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bad results are data. Good reports here become **gold queries** in
+        `backend/eval/datasets/`, which tighten the benchmark's confidence intervals.
+        Please include the query exactly as typed and the symbol you expected.
+  - type: input
+    id: query
+    attributes:
+      label: Query
+      description: Exactly as typed, including any `@symbol`, `#route` or `/path` prefixes.
+      placeholder: "give the customer their money back"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Query type
+      options:
+        - lexical (names identifiers / APIs)
+        - semantic (describes behaviour in other words)
+        - structural (asks about callers, callees, data flow)
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: Expected symbol(s)
+      description: "`symbol_id`, i.e. `path::Qualified.name`. Mark the primary answer first."
+      placeholder: "billing/payments.py::refund_payment"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual top results
+      description: Top 5 `symbol_id`s with their dense / bm25 / graph ranks (hover the result badge to see them).
+      placeholder: |
+        1. billing/payments.py::charge_customer   d=1 b=1 g=3
+        2. …
+    validations:
+      required: true
+  - type: checkboxes
+    id: pillars
+    attributes:
+      label: Pillars enabled
+      options:
+        - label: Dense
+        - label: BM25
+        - label: Graph
+        - label: Cross-encoder rerank
+  - type: input
+    id: corpus
+    attributes:
+      label: Repository / corpus
+      placeholder: "eval/corpora/billing_service, or a description of your codebase"
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is the expected result right?
+      description: One or two sentences. This helps grade relevance (2 = primary answer, 1 = direct collaborator).

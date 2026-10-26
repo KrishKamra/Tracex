@@ -1,0 +1,30 @@
+version: 2
+updates:
+  - package-ecosystem: uv
+    directory: /backend
+    schedule:
+      interval: weekly
+    groups:
+      python-minor:
+        update-types: [minor, patch]
+    ignore:
+      # jina-embeddings-v2's remote code is incompatible with transformers 5.x.
+      - dependency-name: transformers
+        versions: [">=5"]
+
+  - package-ecosystem: npm
+    directory: /frontend
+    schedule:
+      interval: weekly
+    groups:
+      frontend-minor:
+        update-types: [minor, patch]
+    ignore:
+      # Next 15 type-checking targets the TypeScript 5 API.
+      - dependency-name: typescript
+        versions: [">=6"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

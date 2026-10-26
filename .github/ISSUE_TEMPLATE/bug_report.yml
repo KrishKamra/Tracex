@@ -1,0 +1,59 @@
+name: Bug report
+description: Something is broken or behaves incorrectly
+title: "fix: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Search results that are **wrong but not broken** belong in the
+        *Retrieval quality* template instead. Security issues: see [SECURITY.md](../../SECURITY.md), not here.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Parser / AST chunking
+        - Retrieval (BM25 · dense · graph · RRF · reranker)
+        - Evaluation / benchmark
+        - API
+        - Workspace UI
+        - Docs / tooling
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps. For parser bugs, a small source snippet is ideal.
+      placeholder: |
+        1. Index `eval/corpora/billing_service`
+        2. Search `@check_limit`
+        3. …
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, payloads or screenshots
+      description: API responses (`/api/v1/...`), the `Server-Timing` header, console errors, or screenshots.
+      render: shell
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      placeholder: "0.4.0 or a commit SHA"
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "OS · Python 3.12 · Node 22 · browser · CPU/GPU"

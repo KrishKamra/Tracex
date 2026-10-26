@@ -31,3 +31,7 @@ tracex-workspace.html
 tracex_master_specification_claude_code_prompt.md
 TRACEX_MASTER_SPEC.md
 *_prompt.md
+
+# Local README references (kept on disk, not versioned)
+SAMPLE_README.md
+README_prompt.md

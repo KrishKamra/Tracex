@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="tracex-mark-title">
+  <title id="tracex-mark-title">Tracex</title>
+  <!-- Two callers (slate) flow into the focus (mint); the focus traces down to a callee (trace cyan).
+       Transparent background; node strokes adapt to the viewer's colour scheme. -->
+  <style>
+    .caller { stroke: #64748B; }
+    .edge { stroke: #10B981; }
+    .trace { stroke: #0284C7; }
+    .focus { fill: #059669; }
+    .halo { stroke: #059669; }
+    @media (prefers-color-scheme: dark) {
+      .caller { stroke: #94A3B8; }
+      .edge { stroke: #10B981; }
+      .trace { stroke: #38BDF8; }
+      .focus { fill: #10B981; }
+      .halo { stroke: #10B981; }
+    }
+  </style>
+  <path class="edge" d="M16.2 16.2 27.6 27.6M47.8 16.2 36.4 27.6" stroke-width="3" stroke-linecap="round" stroke-opacity=".7"/>
+  <path class="trace" d="M32 39.5v7.2" stroke-width="3" stroke-linecap="round"/>
+  <circle class="caller" cx="12.5" cy="12.5" r="5.25" stroke-width="3"/>
+  <circle class="caller" cx="51.5" cy="12.5" r="5.25" stroke-width="3"/>
+  <circle class="trace" cx="32" cy="52.5" r="5.25" stroke-width="3"/>
+  <circle class="halo" cx="32" cy="32" r="11" stroke-width="2" stroke-opacity=".32"/>
+  <circle class="focus" cx="32" cy="32" r="6.5"/>
+</svg>

@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use Tracex in your research, please cite it as below."
+title: "Tracex: AST-aware hybrid code search with explainable rank fusion"
+abstract: >-
+  Tracex retrieves source code by combining scope-preserving tree-sitter AST chunks
+  with three retrieval signals (sub-token BM25, dense code embeddings and a static
+  call graph), fused by weighted Reciprocal Rank Fusion and reranked by a
+  cross-encoder. On a hand-labelled benchmark of 37 queries, the cross-validated
+  pipeline reaches NDCG@5 = 0.784, significantly above BM25 (paired randomization
+  test, Holm-adjusted p = 0.002).
+type: software
+authors:
+  - given-names: Krish
+    family-names: Kamra
+  - given-names: Jash
+    family-names: Kankariya
+repository-code: "https://github.com/KrishKamra/Tracex"
+license: Apache-2.0
+version: 0.4.0
+date-released: "2026-10-26"
+keywords:
+  - code search
+  - information retrieval
+  - natural language processing
+  - BM25
+  - dense retrieval
+  - reciprocal rank fusion
+  - call graph
+  - tree-sitter

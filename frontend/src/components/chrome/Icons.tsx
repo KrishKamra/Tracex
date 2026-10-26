@@ -15,20 +15,23 @@ const stroke = (size: number, className?: string, width = 2) => ({
   "aria-hidden": true,
 });
 
+/** The Tracex mark (docs/assets/tracex-mark.svg): callers → focus → traced callee. */
 export function Logo() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 64 64" fill="none" aria-hidden="true">
       <path
-        d="M5.5 6.5 12 12M18.5 6.5 12 12M12 12v6.5"
+        d="M16.2 16.2 27.6 27.6M47.8 16.2 36.4 27.6"
         stroke="rgb(var(--mint))"
-        strokeOpacity=".55"
-        strokeWidth="1.5"
+        strokeOpacity=".7"
+        strokeWidth="3.5"
         strokeLinecap="round"
       />
-      <circle cx="5" cy="6" r="2.1" stroke="rgb(var(--sub))" strokeWidth="1.5" />
-      <circle cx="19" cy="6" r="2.1" stroke="rgb(var(--sub))" strokeWidth="1.5" />
-      <circle cx="12" cy="19.5" r="2.1" stroke="rgb(var(--sub))" strokeWidth="1.5" />
-      <circle cx="12" cy="12" r="2.8" fill="rgb(var(--mint))" />
+      <path d="M32 39.5v7.2" stroke="rgb(var(--trace))" strokeWidth="3.5" strokeLinecap="round" />
+      <circle cx="12.5" cy="12.5" r="5.25" stroke="rgb(var(--sub))" strokeWidth="3.5" />
+      <circle cx="51.5" cy="12.5" r="5.25" stroke="rgb(var(--sub))" strokeWidth="3.5" />
+      <circle cx="32" cy="52.5" r="5.25" stroke="rgb(var(--trace))" strokeWidth="3.5" />
+      <circle cx="32" cy="32" r="11" stroke="rgb(var(--mint))" strokeOpacity=".32" strokeWidth="2.5" />
+      <circle cx="32" cy="32" r="6.5" fill="rgb(var(--mint))" />
     </svg>
   );
 }

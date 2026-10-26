@@ -1,0 +1,16 @@
+Tracex
+Copyright 2026 Krish Kamra and Jash Kankariya
+
+This product includes software developed by the Tracex contributors
+(https://github.com/KrishKamra/Tracex), licensed under the Apache License,
+Version 2.0.
+
+Third-party models are downloaded at runtime and are not redistributed here:
+  * jinaai/jina-embeddings-v2-base-code (Apache-2.0)
+  * cross-encoder/ms-marco-MiniLM-L-6-v2 (Apache-2.0)
+  * BAAI/bge-m3, optional fallback (MIT)
+
+Third-party libraries are used under their own licenses, including
+tree-sitter and its grammars (MIT), sentence-transformers (Apache-2.0),
+NetworkX (BSD-3-Clause), FastAPI (MIT), Next.js (MIT), React Flow (MIT)
+and Shiki (MIT).
