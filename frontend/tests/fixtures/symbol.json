@@ -1,0 +1,150 @@
+{
+  "symbol_id": "billing/payments.py::charge_customer",
+  "qualified_name": "charge_customer",
+  "name": "charge_customer",
+  "kind": "function",
+  "language": "python",
+  "file_path": "billing/payments.py",
+  "signature": "def charge_customer(gateway: PaymentGateway, customer: dict, amount: int) -> dict",
+  "decorators": [],
+  "docstring": "Charge a customer after enforcing their spending limit, then persist and email a receipt.",
+  "parent_scope": null,
+  "enclosing_class": null,
+  "bases": [],
+  "routes": [],
+  "highlight": {
+    "start_line": 44,
+    "end_line": 53,
+    "start_byte": 1486,
+    "end_byte": 2152
+  },
+  "scope": {
+    "params": [
+      {
+        "name": "gateway",
+        "annotation": "PaymentGateway",
+        "default": null
+      },
+      {
+        "name": "customer",
+        "annotation": "dict",
+        "default": null
+      },
+      {
+        "name": "amount",
+        "annotation": "int",
+        "default": null
+      }
+    ],
+    "locals": [
+      "charge",
+      "payment"
+    ],
+    "raises": [
+      "LimitExceededError"
+    ],
+    "returns": [
+      "payment"
+    ],
+    "return_type": "dict"
+  },
+  "imports": [
+    {
+      "module": "requests",
+      "name": null,
+      "alias": null,
+      "line": 3
+    },
+    {
+      "module": ".limits",
+      "name": "check_limit",
+      "alias": null,
+      "line": 5
+    },
+    {
+      "module": ".notifications",
+      "name": "send_receipt_email",
+      "alias": null,
+      "line": 6
+    },
+    {
+      "module": ".retry",
+      "name": "retry",
+      "alias": null,
+      "line": 7
+    },
+    {
+      "module": ".storage",
+      "name": "AuditLog",
+      "alias": null,
+      "line": 8
+    },
+    {
+      "module": ".storage",
+      "name": "PaymentRepository",
+      "alias": null,
+      "line": 8
+    },
+    {
+      "module": ".storage",
+      "name": "UsageStore",
+      "alias": null,
+      "line": 8
+    }
+  ],
+  "call_sites": [
+    {
+      "callee": "check_limit",
+      "line": 46,
+      "target_id": "billing/limits.py::check_limit"
+    },
+    {
+      "callee": "customer.get",
+      "line": 46,
+      "target_id": null
+    },
+    {
+      "callee": "LimitExceededError",
+      "line": 47,
+      "target_id": "billing/payments.py::LimitExceededError"
+    },
+    {
+      "callee": "gateway.create_charge",
+      "line": 48,
+      "target_id": "billing/payments.py::PaymentGateway.create_charge"
+    },
+    {
+      "callee": "PaymentRepository().save",
+      "line": 50,
+      "target_id": "billing/storage.py::PaymentRepository.save"
+    },
+    {
+      "callee": "PaymentRepository",
+      "line": 50,
+      "target_id": "billing/storage.py::PaymentRepository"
+    },
+    {
+      "callee": "UsageStore.default().increment",
+      "line": 51,
+      "target_id": "billing/storage.py::UsageStore.increment"
+    },
+    {
+      "callee": "UsageStore.default",
+      "line": 51,
+      "target_id": "billing/storage.py::UsageStore.default"
+    },
+    {
+      "callee": "send_receipt_email",
+      "line": 52,
+      "target_id": "billing/notifications.py::send_receipt_email"
+    }
+  ],
+  "fan_in": 0,
+  "fan_out": 8,
+  "file": {
+    "path": "billing/payments.py",
+    "language": "python",
+    "line_count": 66,
+    "source": "\"\"\"Charging customers and issuing refunds through the payment provider.\"\"\"\n\nimport requests\n\nfrom .limits import check_limit\nfrom .notifications import send_receipt_email\nfrom .retry import retry\nfrom .storage import AuditLog, PaymentRepository, UsageStore\n\n\nclass LimitExceededError(Exception):\n    \"\"\"Raised when a charge would push the account over its spending cap.\"\"\"\n\n\nclass PaymentGateway:\n    \"\"\"Thin client for the external card processor's REST API.\"\"\"\n\n    def __init__(self, api_key: str, base_url: str = \"https://api.processor.example/v1\"):\n        self.api_key = api_key\n        self.base_url = base_url\n\n    @retry(times=4)\n    def _request(self, method: str, path: str, payload: dict) -> dict:\n        response = requests.request(\n            method,\n            f\"{self.base_url}{path}\",\n            json=payload,\n            headers={\"Authorization\": f\"Bearer {self.api_key}\"},\n            timeout=10,\n        )\n        response.raise_for_status()\n        return response.json()\n\n    def create_charge(self, customer_id: str, amount: int, currency: str = \"usd\") -> dict:\n        \"\"\"Ask the processor to capture `amount` from the customer's default card.\"\"\"\n        return self._request(\n            \"POST\", \"/charges\", {\"customer\": customer_id, \"amount\": amount, \"currency\": currency}\n        )\n\n    def create_refund(self, charge_id: str, amount: int | None = None) -> dict:\n        return self._request(\"POST\", \"/refunds\", {\"charge\": charge_id, \"amount\": amount})\n\n\ndef charge_customer(gateway: PaymentGateway, customer: dict, amount: int) -> dict:\n    \"\"\"Charge a customer after enforcing their spending limit, then persist and email a receipt.\"\"\"\n    if not check_limit(customer[\"account_id\"], amount, tier=customer.get(\"tier\", \"standard\")):\n        raise LimitExceededError(customer[\"account_id\"])\n    charge = gateway.create_charge(customer[\"id\"], amount)\n    payment = {\"id\": charge[\"id\"], \"customer_id\": customer[\"id\"], \"amount\": amount, \"status\": \"succeeded\"}\n    PaymentRepository().save(payment)\n    UsageStore.default().increment(customer[\"account_id\"], amount)\n    send_receipt_email(customer, payment)\n    return payment\n\n\ndef refund_payment(gateway: PaymentGateway, payment_id: str, reason: str = \"requested_by_customer\") -> dict:\n    \"\"\"Refund a previous payment in full and write the refund to the audit log.\"\"\"\n    repo = PaymentRepository()\n    payment = repo.get(payment_id)\n    if payment is None:\n        raise KeyError(payment_id)\n    gateway.create_refund(payment_id)\n    payment[\"status\"] = \"refunded\"\n    repo.save(payment)\n    AuditLog().record(\"refund\", payment_id=payment_id, reason=reason)\n    return payment\n"
+  }
+}

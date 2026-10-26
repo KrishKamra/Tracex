@@ -1,0 +1,312 @@
+{
+  "focus": "billing/payments.py::charge_customer",
+  "depth": 1,
+  "nodes": [
+    {
+      "id": "billing/payments.py::charge_customer",
+      "type": "symbol",
+      "position": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "data": {
+        "symbol_id": "billing/payments.py::charge_customer",
+        "label": "charge_customer",
+        "qualified_name": "charge_customer",
+        "kind": "function",
+        "file_path": "billing/payments.py",
+        "start_line": 44,
+        "role": "focus",
+        "depth": 0,
+        "fan_in": 0,
+        "fan_out": 8,
+        "hidden_callers": 0,
+        "hidden_callees": 0
+      }
+    },
+    {
+      "id": "billing/payments.py::LimitExceededError",
+      "type": "symbol",
+      "position": {
+        "x": 320.0,
+        "y": -385.0
+      },
+      "data": {
+        "symbol_id": "billing/payments.py::LimitExceededError",
+        "label": "LimitExceededError",
+        "qualified_name": "LimitExceededError",
+        "kind": "class",
+        "file_path": "billing/payments.py",
+        "start_line": 11,
+        "role": "callee",
+        "depth": 1,
+        "fan_in": 1,
+        "fan_out": 0,
+        "hidden_callers": 0,
+        "hidden_callees": 0
+      }
+    },
+    {
+      "id": "billing/payments.py::PaymentGateway.create_charge",
+      "type": "symbol",
+      "position": {
+        "x": 320.0,
+        "y": -275.0
+      },
+      "data": {
+        "symbol_id": "billing/payments.py::PaymentGateway.create_charge",
+        "label": "create_charge",
+        "qualified_name": "PaymentGateway.create_charge",
+        "kind": "method",
+        "file_path": "billing/payments.py",
+        "start_line": 34,
+        "role": "callee",
+        "depth": 1,
+        "fan_in": 1,
+        "fan_out": 1,
+        "hidden_callers": 0,
+        "hidden_callees": 1
+      }
+    },
+    {
+      "id": "billing/storage.py::PaymentRepository",
+      "type": "symbol",
+      "position": {
+        "x": 320.0,
+        "y": -165.0
+      },
+      "data": {
+        "symbol_id": "billing/storage.py::PaymentRepository",
+        "label": "PaymentRepository",
+        "qualified_name": "PaymentRepository",
+        "kind": "class",
+        "file_path": "billing/storage.py",
+        "start_line": 8,
+        "role": "callee",
+        "depth": 1,
+        "fan_in": 4,
+        "fan_out": 0,
+        "hidden_callers": 3,
+        "hidden_callees": 0
+      }
+    },
+    {
+      "id": "billing/storage.py::PaymentRepository.save",
+      "type": "symbol",
+      "position": {
+        "x": 320.0,
+        "y": -55.0
+      },
+      "data": {
+        "symbol_id": "billing/storage.py::PaymentRepository.save",
+        "label": "save",
+        "qualified_name": "PaymentRepository.save",
+        "kind": "method",
+        "file_path": "billing/storage.py",
+        "start_line": 14,
+        "role": "callee",
+        "depth": 1,
+        "fan_in": 3,
+        "fan_out": 0,
+        "hidden_callers": 2,
+        "hidden_callees": 0
+      }
+    },
+    {
+      "id": "billing/storage.py::UsageStore.default",
+      "type": "symbol",
+      "position": {
+        "x": 320.0,
+        "y": 55.0
+      },
+      "data": {
+        "symbol_id": "billing/storage.py::UsageStore.default",
+        "label": "default",
+        "qualified_name": "UsageStore.default",
+        "kind": "method",
+        "file_path": "billing/storage.py",
+        "start_line": 41,
+        "role": "callee",
+        "depth": 1,
+        "fan_in": 2,
+        "fan_out": 0,
+        "hidden_callers": 1,
+        "hidden_callees": 0
+      }
+    },
+    {
+      "id": "billing/storage.py::UsageStore.increment",
+      "type": "symbol",
+      "position": {
+        "x": 320.0,
+        "y": 165.0
+      },
+      "data": {
+        "symbol_id": "billing/storage.py::UsageStore.increment",
+        "label": "increment",
+        "qualified_name": "UsageStore.increment",
+        "kind": "method",
+        "file_path": "billing/storage.py",
+        "start_line": 53,
+        "role": "callee",
+        "depth": 1,
+        "fan_in": 1,
+        "fan_out": 0,
+        "hidden_callers": 0,
+        "hidden_callees": 0
+      }
+    },
+    {
+      "id": "billing/limits.py::check_limit",
+      "type": "symbol",
+      "position": {
+        "x": 320.0,
+        "y": 275.0
+      },
+      "data": {
+        "symbol_id": "billing/limits.py::check_limit",
+        "label": "check_limit",
+        "qualified_name": "check_limit",
+        "kind": "function",
+        "file_path": "billing/limits.py",
+        "start_line": 27,
+        "role": "callee",
+        "depth": 1,
+        "fan_in": 1,
+        "fan_out": 3,
+        "hidden_callers": 0,
+        "hidden_callees": 3
+      }
+    },
+    {
+      "id": "billing/notifications.py::send_receipt_email",
+      "type": "symbol",
+      "position": {
+        "x": 320.0,
+        "y": 385.0
+      },
+      "data": {
+        "symbol_id": "billing/notifications.py::send_receipt_email",
+        "label": "send_receipt_email",
+        "qualified_name": "send_receipt_email",
+        "kind": "function",
+        "file_path": "billing/notifications.py",
+        "start_line": 26,
+        "role": "callee",
+        "depth": 1,
+        "fan_in": 1,
+        "fan_out": 0,
+        "hidden_callers": 0,
+        "hidden_callees": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "CALLS:billing/payments.py::charge_customer->billing/limits.py::check_limit",
+      "source": "billing/payments.py::charge_customer",
+      "target": "billing/limits.py::check_limit",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          46
+        ]
+      }
+    },
+    {
+      "id": "CALLS:billing/payments.py::charge_customer->billing/notifications.py::send_receipt_email",
+      "source": "billing/payments.py::charge_customer",
+      "target": "billing/notifications.py::send_receipt_email",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          52
+        ]
+      }
+    },
+    {
+      "id": "CALLS:billing/payments.py::charge_customer->billing/payments.py::LimitExceededError",
+      "source": "billing/payments.py::charge_customer",
+      "target": "billing/payments.py::LimitExceededError",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          47
+        ]
+      }
+    },
+    {
+      "id": "CALLS:billing/payments.py::charge_customer->billing/payments.py::PaymentGateway.create_charge",
+      "source": "billing/payments.py::charge_customer",
+      "target": "billing/payments.py::PaymentGateway.create_charge",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          48
+        ]
+      }
+    },
+    {
+      "id": "CALLS:billing/payments.py::charge_customer->billing/storage.py::PaymentRepository",
+      "source": "billing/payments.py::charge_customer",
+      "target": "billing/storage.py::PaymentRepository",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          50
+        ]
+      }
+    },
+    {
+      "id": "CALLS:billing/payments.py::charge_customer->billing/storage.py::PaymentRepository.save",
+      "source": "billing/payments.py::charge_customer",
+      "target": "billing/storage.py::PaymentRepository.save",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          50
+        ]
+      }
+    },
+    {
+      "id": "CALLS:billing/payments.py::charge_customer->billing/storage.py::UsageStore.default",
+      "source": "billing/payments.py::charge_customer",
+      "target": "billing/storage.py::UsageStore.default",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          51
+        ]
+      }
+    },
+    {
+      "id": "CALLS:billing/payments.py::charge_customer->billing/storage.py::UsageStore.increment",
+      "source": "billing/payments.py::charge_customer",
+      "target": "billing/storage.py::UsageStore.increment",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          51
+        ]
+      }
+    }
+  ],
+  "fan_in": 0,
+  "fan_out": 8
+}

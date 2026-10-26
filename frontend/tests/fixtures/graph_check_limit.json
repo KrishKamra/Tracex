@@ -1,0 +1,172 @@
+{
+  "focus": "billing/limits.py::check_limit",
+  "depth": 1,
+  "nodes": [
+    {
+      "id": "billing/payments.py::charge_customer",
+      "type": "symbol",
+      "position": {
+        "x": -320.0,
+        "y": 0.0
+      },
+      "data": {
+        "symbol_id": "billing/payments.py::charge_customer",
+        "label": "charge_customer",
+        "qualified_name": "charge_customer",
+        "kind": "function",
+        "file_path": "billing/payments.py",
+        "start_line": 44,
+        "role": "caller",
+        "depth": -1,
+        "fan_in": 0,
+        "fan_out": 8,
+        "hidden_callers": 0,
+        "hidden_callees": 7
+      }
+    },
+    {
+      "id": "billing/limits.py::check_limit",
+      "type": "symbol",
+      "position": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "data": {
+        "symbol_id": "billing/limits.py::check_limit",
+        "label": "check_limit",
+        "qualified_name": "check_limit",
+        "kind": "function",
+        "file_path": "billing/limits.py",
+        "start_line": 27,
+        "role": "focus",
+        "depth": 0,
+        "fan_in": 1,
+        "fan_out": 3,
+        "hidden_callers": 0,
+        "hidden_callees": 0
+      }
+    },
+    {
+      "id": "billing/limits.py::SpendingPolicy",
+      "type": "symbol",
+      "position": {
+        "x": 320.0,
+        "y": -110.0
+      },
+      "data": {
+        "symbol_id": "billing/limits.py::SpendingPolicy",
+        "label": "SpendingPolicy",
+        "qualified_name": "SpendingPolicy",
+        "kind": "class",
+        "file_path": "billing/limits.py",
+        "start_line": 8,
+        "role": "callee",
+        "depth": 1,
+        "fan_in": 1,
+        "fan_out": 0,
+        "hidden_callers": 0,
+        "hidden_callees": 0
+      }
+    },
+    {
+      "id": "billing/limits.py::SpendingPolicy.is_exempt",
+      "type": "symbol",
+      "position": {
+        "x": 320.0,
+        "y": 0.0
+      },
+      "data": {
+        "symbol_id": "billing/limits.py::SpendingPolicy.is_exempt",
+        "label": "is_exempt",
+        "qualified_name": "SpendingPolicy.is_exempt",
+        "kind": "method",
+        "file_path": "billing/limits.py",
+        "start_line": 17,
+        "role": "callee",
+        "depth": 1,
+        "fan_in": 1,
+        "fan_out": 0,
+        "hidden_callers": 0,
+        "hidden_callees": 0
+      }
+    },
+    {
+      "id": "billing/limits.py::fetch_usage",
+      "type": "symbol",
+      "position": {
+        "x": 320.0,
+        "y": 110.0
+      },
+      "data": {
+        "symbol_id": "billing/limits.py::fetch_usage",
+        "label": "fetch_usage",
+        "qualified_name": "fetch_usage",
+        "kind": "function",
+        "file_path": "billing/limits.py",
+        "start_line": 22,
+        "role": "callee",
+        "depth": 1,
+        "fan_in": 1,
+        "fan_out": 2,
+        "hidden_callers": 0,
+        "hidden_callees": 2
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "CALLS:billing/limits.py::check_limit->billing/limits.py::SpendingPolicy",
+      "source": "billing/limits.py::check_limit",
+      "target": "billing/limits.py::SpendingPolicy",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          31
+        ]
+      }
+    },
+    {
+      "id": "CALLS:billing/limits.py::check_limit->billing/limits.py::SpendingPolicy.is_exempt",
+      "source": "billing/limits.py::check_limit",
+      "target": "billing/limits.py::SpendingPolicy.is_exempt",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          32
+        ]
+      }
+    },
+    {
+      "id": "CALLS:billing/limits.py::check_limit->billing/limits.py::fetch_usage",
+      "source": "billing/limits.py::check_limit",
+      "target": "billing/limits.py::fetch_usage",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          34
+        ]
+      }
+    },
+    {
+      "id": "CALLS:billing/payments.py::charge_customer->billing/limits.py::check_limit",
+      "source": "billing/payments.py::charge_customer",
+      "target": "billing/limits.py::check_limit",
+      "type": "smoothstep",
+      "animated": false,
+      "data": {
+        "kind": "CALLS",
+        "call_lines": [
+          46
+        ]
+      }
+    }
+  ],
+  "fan_in": 1,
+  "fan_out": 3
+}

@@ -1,0 +1,31 @@
+{
+  "repository": "/repos/billing_service",
+  "files": 13,
+  "symbols": 65,
+  "nodes": 77,
+  "edges": {
+    "CALLS": 51,
+    "IMPORTS": 17
+  },
+  "languages": {
+    "python": 8,
+    "tsx": 1,
+    "typescript": 4
+  },
+  "parse_errors": 0,
+  "call_resolution_rate": 0.36428571428571427,
+  "embedding_model": "hashing",
+  "reranker_model": null,
+  "device": "cpu",
+  "build_ms": {
+    "bm25_index_ms": 1.0,
+    "embedding_index_ms": 1.0,
+    "graph_build_ms": 1.0
+  },
+  "duration_ms": 10.0,
+  "parser_versions": {
+    "tree-sitter": "0.26.0",
+    "tree-sitter-python": "0.25.0",
+    "tree-sitter-typescript": "0.23.2"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "query": {
+    "raw": "check spending limit",
+    "text": "check spending limit",
+    "symbol": null,
+    "route": null,
+    "path": null
+  },
+  "pillars": [
+    "dense",
+    "bm25",
+    "graph"
+  ],
+  "reranked": false,
+  "candidates": 65,
+  "hits": [
+    {
+      "rank": 1,
+      "symbol_id": "billing/limits.py::check_limit",
+      "qualified_name": "check_limit",
+      "name": "check_limit",
+      "kind": "function",
+      "language": "python",
+      "file_path": "billing/limits.py",
+      "start_line": 27,
+      "end_line": 34,
+      "signature": "def check_limit(account_id: str, amount: int, tier: str = \"standard\", policy: SpendingPolicy | None = None) -> bool",
+      "summary": "Return True if charging `amount` keeps the account within its monthly budget.",
+      "snippet": "def check_limit(\n    account_id: str, amount: int, tier: str = \"standard\", policy: SpendingPolicy | None = None\n) -> bool:\n    \"\"\"Return True if charging `amount` keeps the account within its monthly budget.\"\"\"\n    policy = policy or SpendingPolicy()\n    if policy.is_exempt(tier):\n        return True\n    return fetch_usage(account_id) + amount <= policy.monthly_cap",
+      "score": 0.01639344262295082,
+      "rrf_score": 0.01639344262295082,
+      "dense_rank": 1,
+      "bm25_rank": 1,
+      "graph_rank": 1,
+      "contributions": {
+        "dense": 0.006557377049180328,
+        "bm25": 0.006557377049180328,
+        "graph": 0.003278688524590164
+      },
+      "match_origin": [
+        "bm25",
+        "dense",
+        "graph"
+      ],
+      "matched_terms": [
+        "check",
+        "spending",
+        "limit"
+      ],
+      "rerank_score": null
+    },
+    {
+      "rank": 2,
+      "symbol_id": "billing/payments.py::LimitExceededError",
+      "qualified_name": "LimitExceededError",
+      "name": "LimitExceededError",
+      "kind": "class",
+      "language": "python",
+      "file_path": "billing/payments.py",
+      "start_line": 11,
+      "end_line": 12,
+      "signature": "class LimitExceededError(Exception)",
+      "summary": "Raised when a charge would push the account over its spending cap.",
+      "snippet": "class LimitExceededError(Exception):\n    \"\"\"Raised when a charge would push the account over its spending cap.\"\"\"",
+      "score": 0.015933528836754644,
+      "rrf_score": 0.015933528836754644,
+      "dense_rank": 2,
+      "bm25_rank": 2,
+      "graph_rank": 6,
+      "contributions": {
+        "dense": 0.0064516129032258064,
+        "bm25": 0.0064516129032258064,
+        "graph": 0.0030303030303030303
+      },
+      "match_origin": [
+        "bm25",
+        "dense",
+        "graph"
+      ],
+      "matched_terms": [
+        "spending",
+        "limit"
+      ],
+      "rerank_score": null
+    },
+    {
+      "rank": 3,
+      "symbol_id": "billing/payments.py::charge_customer",
+      "qualified_name": "charge_customer",
+      "name": "charge_customer",
+      "kind": "function",
+      "language": "python",
+      "file_path": "billing/payments.py",
+      "start_line": 44,
+      "end_line": 53,
+      "signature": "def charge_customer(gateway: PaymentGateway, customer: dict, amount: int) -> dict",
+      "summary": "Charge a customer after enforcing their spending limit, then persist and email a receipt.",
+      "snippet": "def charge_customer(gateway: PaymentGateway, customer: dict, amount: int) -> dict:\n    \"\"\"Charge a customer after enforcing their spending limit, then persist and email a receipt.\"\"\"\n    if not check_limit(customer[\"account_id\"], amount, tier=customer.get(\"tier\", \"standard\")):\n        raise LimitExceededError(customer[\"account_id\"])\n    charge = gateway.create_charge(customer[\"id\"], amount)\n    payment = {\"id\": charge[\"id\"], \"customer_id\": customer[\"id\"], \"amount\": amount, \"status\": \"succeeded\"}\n    PaymentRepository().save(payment)\n    UsageStore.default().increment(customer[\"account_id\"], amount)",
+      "score": 0.015635618861425313,
+      "rrf_score": 0.015635618861425313,
+      "dense_rank": 6,
+      "bm25_rank": 3,
+      "graph_rank": 2,
+      "contributions": {
+        "dense": 0.006060606060606061,
+        "bm25": 0.006349206349206349,
+        "graph": 0.0032258064516129032
+      },
+      "match_origin": [
+        "bm25",
+        "dense",
+        "graph"
+      ],
+      "matched_terms": [
+        "check",
+        "spending",
+        "limit"
+      ],
+      "rerank_score": null
+    },
+    {
+      "rank": 4,
+      "symbol_id": "billing/limits.py::SpendingPolicy",
+      "qualified_name": "SpendingPolicy",
+      "name": "SpendingPolicy",
+      "kind": "class",
+      "language": "python",
+      "file_path": "billing/limits.py",
+      "start_line": 8,
+      "end_line": 19,
+      "signature": "class SpendingPolicy",
+      "summary": "Per-account policy describing caps and exemptions.",
+      "snippet": "class SpendingPolicy:\n    \"\"\"Per-account policy describing caps and exemptions.\"\"\"\n\n    def __init__(\n        self, monthly_cap: int = DEFAULT_MONTHLY_CAP, exempt_tiers: tuple[str, ...] = (\"enterprise\",)\n    ):\n        self.monthly_cap = monthly_cap\n        self.exempt_tiers = exempt_tiers",
+      "score": 0.015578449328449328,
+      "rrf_score": 0.015578449328449328,
+      "dense_rank": 5,
+      "bm25_rank": 4,
+      "graph_rank": 3,
+      "contributions": {
+        "dense": 0.006153846153846154,
+        "bm25": 0.00625,
+        "graph": 0.0031746031746031746
+      },
+      "match_origin": [
+        "bm25",
+        "dense",
+        "graph"
+      ],
+      "matched_terms": [
+        "spending"
+      ],
+      "rerank_score": null
+    },
+    {
+      "rank": 5,
+      "symbol_id": "billing/limits.py::SpendingPolicy.is_exempt",
+      "qualified_name": "SpendingPolicy.is_exempt",
+      "name": "is_exempt",
+      "kind": "method",
+      "language": "python",
+      "file_path": "billing/limits.py",
+      "start_line": 17,
+      "end_line": 19,
+      "signature": "def is_exempt(self, tier: str) -> bool",
+      "summary": "Enterprise tiers bypass the monthly cap entirely.",
+      "snippet": "    def is_exempt(self, tier: str) -> bool:\n        \"\"\"Enterprise tiers bypass the monthly cap entirely.\"\"\"\n        return tier in self.exempt_tiers",
+      "score": 0.01553481240981241,
+      "rrf_score": 0.01553481240981241,
+      "dense_rank": 3,
+      "bm25_rank": 6,
+      "graph_rank": 4,
+      "contributions": {
+        "dense": 0.006349206349206349,
+        "bm25": 0.006060606060606061,
+        "graph": 0.003125
+      },
+      "match_origin": [
+        "dense",
+        "bm25",
+        "graph"
+      ],
+      "matched_terms": [
+        "spending"
+      ],
+      "rerank_score": null
+    }
+  ],
+  "timings": {
+    "embedding_ms": 1.0,
+    "dense_ms": 1.0,
+    "bm25_ms": 1.0,
+    "ast_graph_ms": 1.0,
+    "rrf_ms": 1.0,
+    "rerank_ms": 1.0,
+    "filter_ms": 1.0,
+    "total_ms": 1.0
+  }
+}
